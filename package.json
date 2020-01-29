@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Brandon Saravia's portfolio",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/index.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrandonSaravia/Portfolio.git"
+  },
+  "author": "Brandon Saravia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrandonSaravia/Portfolio/issues"
+  },
+  "homepage": "https://github.com/BrandonSaravia/Portfolio#readme",
+  "dev-dependencies": {
+    "node-sass": "^4.13.1"
+  },
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}
