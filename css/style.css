@@ -88,34 +88,36 @@ canvas {
 .btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-  padding: 1.5rem 4rem;
   display: inline-block;
+  cursor: pointer; }
+
+.btn--expanding, .btn--expanding:link, .btn--expanding:visited {
   border-radius: 10rem;
   transition: all .2s;
   position: relative;
   font-size: 1.6rem;
   border: none;
-  cursor: pointer; }
+  padding: 1.5rem 4rem; }
 
-.btn:hover {
+.btn--expanding:hover {
   transform: translateY(-0.3rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-  .btn:hover::after {
+  .btn--expanding:hover::after {
     transform: scale(1.4, 1.6);
     opacity: 0; }
 
-.btn:active, .btn:focus {
+.btn--expanding:active, .btn--expanding:focus {
   outline: none;
   transform: translateY(-0.1rem);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
-.btn--white {
+.btn--expanding-white {
   background-color: #fff;
   color: #777; }
-  .btn--white::after {
+  .btn--expanding-white::after {
     background-color: #fff; }
 
-.btn::after {
+.btn--expanding::after {
   content: "";
   display: inline-block;
   height: 100%;
@@ -126,6 +128,33 @@ canvas {
   left: 0;
   z-index: -1;
   transition: all .4s; }
+
+.btn--text, .btn--text:link, .btn--text:visited {
+  font-size: 1.6rem;
+  font-weight: 300;
+  border: 2px solid #000;
+  padding: 1.5rem 3rem;
+  color: #000;
+  transition: all .4s; }
+  .btn--text .fa-arrow-right, .btn--text:link .fa-arrow-right, .btn--text:visited .fa-arrow-right {
+    transition: transform .4s ease; }
+
+.btn--text .fa-arrow-right {
+  margin-left: 1rem; }
+
+.btn--text:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  color: #fff;
+  background-color: #cfb8b9; }
+
+.btn--text:active, .btn--text:focus {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.btn--text:hover .fa-arrow-right {
+  transition: transform .4s ease;
+  transform: rotate(90deg); }
 
 .header {
   position: absolute;
@@ -140,7 +169,7 @@ canvas {
     align-items: center;
     flex-flow: column; }
   .header__text-box {
-    border: 5px solid black;
+    border: 5px solid #000;
     padding: 2rem 1.5rem;
     margin-bottom: 6rem;
     text-align: center; }
