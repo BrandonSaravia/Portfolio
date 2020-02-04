@@ -62,7 +62,9 @@ body {
   position: relative; }
 
 canvas {
-  display: block; }
+  display: block;
+  width: 100% !important;
+  height: 100vh; }
 
 .body {
   font-family: "Work Sans", sans-serif;
@@ -85,37 +87,81 @@ canvas {
     font-weight: 700;
     letter-spacing: 1.75rem; }
 
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, red, #fff);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  transition: all .2s; }
+  .heading-secondary:hover {
+    transform: scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.heading-tertiary {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.paragraph {
+  font-size: 1.6rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
+
+.u-center-text {
+  text-align: center !important; }
+
+.u-margin-bottom-large {
+  margin-bottom: 8rem !important; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem !important; }
+
+.u-margin-top-large {
+  margin-top: 8rem !important; }
+
+.u-margin-top-huge {
+  margin-top: 10rem !important; }
+
 .btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-  padding: 1.5rem 4rem;
   display: inline-block;
+  cursor: pointer; }
+
+.btn--expanding, .btn--expanding:link, .btn--expanding:visited {
   border-radius: 10rem;
   transition: all .2s;
   position: relative;
   font-size: 1.6rem;
   border: none;
-  cursor: pointer; }
+  padding: 1.5rem 4rem; }
 
-.btn:hover {
+.btn--expanding:hover {
   transform: translateY(-0.3rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-  .btn:hover::after {
+  .btn--expanding:hover::after {
     transform: scale(1.4, 1.6);
     opacity: 0; }
 
-.btn:active, .btn:focus {
+.btn--expanding:active, .btn--expanding:focus {
   outline: none;
   transform: translateY(-0.1rem);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
-.btn--white {
+.btn--expanding-white {
   background-color: #fff;
   color: #777; }
-  .btn--white::after {
+  .btn--expanding-white::after {
     background-color: #fff; }
 
-.btn::after {
+.btn--expanding::after {
   content: "";
   display: inline-block;
   height: 100%;
@@ -126,6 +172,70 @@ canvas {
   left: 0;
   z-index: -1;
   transition: all .4s; }
+
+.btn--text, .btn--text:link, .btn--text:visited {
+  font-size: 1.6rem;
+  font-weight: 300;
+  border: 2px solid #000;
+  padding: 1.5rem 3rem;
+  color: #000;
+  transition: all .4s; }
+  .btn--text .fa-arrow-right, .btn--text:link .fa-arrow-right, .btn--text:visited .fa-arrow-right {
+    transition: transform .4s ease; }
+
+.btn--text .fa-arrow-right {
+  margin-left: 1rem; }
+
+.btn--text:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  color: #fff;
+  background-color: #cfb8b9; }
+
+.btn--text:active, .btn--text:focus {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.btn--text:hover .fa-arrow-right {
+  transition: transform .4s ease;
+  transform: rotate(90deg); }
+
+.list {
+  margin-bottom: 4rem; }
+  .list__item {
+    font-size: 2rem; }
+    .list__item:not(:last-child) {
+      margin-bottom: 1rem; }
+  .list__key {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-right: 1rem; }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
 
 .header {
   position: absolute;
@@ -140,7 +250,10 @@ canvas {
     align-items: center;
     flex-flow: column; }
   .header__text-box {
-    border: 5px solid black;
+    border: 5px solid #000;
     padding: 2rem 1.5rem;
     margin-bottom: 6rem;
     text-align: center; }
+
+.section-about {
+  padding: 10rem 0 25rem 0; }

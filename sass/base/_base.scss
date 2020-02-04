@@ -63,9 +63,11 @@ body {
     margin: 0;
     height: 100vh;
     box-sizing: border-box;
-    position: relative;
+	position: relative;
 }
 
 canvas {
-    display: block;
+	display: block;
+	width: 100% !important;
+	height: 100vh;
 }
