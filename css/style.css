@@ -92,9 +92,7 @@ canvas {
   text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
-  background-image: linear-gradient(to right, red, #fff);
-  -webkit-background-clip: text;
-  color: transparent;
+  color: salmon;
   letter-spacing: 2px;
   transition: all .2s; }
   .heading-secondary:hover {
@@ -107,9 +105,12 @@ canvas {
   text-transform: uppercase; }
 
 .paragraph {
-  font-size: 1.6rem; }
+  font-size: 2rem;
+  line-height: 1.5; }
   .paragraph:not(:last-child) {
     margin-bottom: 3rem; }
+  .paragraph--emphisis {
+    font-weight: bolder; }
 
 .u-center-text {
   text-align: center !important; }
@@ -119,6 +120,9 @@ canvas {
 
 .u-margin-bottom-medium {
   margin-bottom: 4rem !important; }
+
+.u-margin-bottom-medium-small {
+  margin-bottom: 2.5rem !important; }
 
 .u-margin-bottom-small {
   margin-bottom: 1.5rem !important; }
@@ -200,16 +204,59 @@ canvas {
   transition: transform .4s ease;
   transform: rotate(90deg); }
 
+.composition {
+  position: relative;
+  margin-top: 5%;
+  margin-left: 5%; }
+  .composition > * {
+    display: inline-block;
+    padding-top: 2rem;
+    font-size: 6.2rem;
+    color: #555;
+    width: 10rem;
+    height: 10rem;
+    background-color: black;
+    text-align: center;
+    margin: 2rem 1rem;
+    color: #fff;
+    box-shadow: -2px -2px 3px rgba(255, 255, 255, 0.5), 3px 3px 3px rgba(0, 0, 0, 0.2); }
+  .composition__javascript-logo:hover {
+    color: #F0DB4F;
+    text-shadow: 0 0 1.5rem #F0DB4F; }
+  .composition__html5-logo:hover {
+    color: #F16529;
+    text-shadow: 0 0 1.5rem #F16529; }
+  .composition__css3-logo:hover {
+    color: #2965f1;
+    text-shadow: 0 0 1.5rem #2965f1; }
+  .composition__react-logo:hover {
+    color: #61dbfb;
+    text-shadow: 0 0 1.5rem #61dbfb; }
+  .composition__less-logo:hover {
+    color: #6f6fc2;
+    text-shadow: 0 0 1.5rem #6f6fc2; }
+  .composition__sass-logo:hover {
+    color: #c69;
+    text-shadow: 0 0 1.5rem #c69; }
+  .composition__java-logo:hover {
+    color: orange;
+    text-shadow: 0 0 1.5rem orange; }
+  .composition__python-logo:hover {
+    color: #4B8BBE;
+    text-shadow: 0 0 1.5rem #4B8BBE; }
+
 .list {
   margin-bottom: 4rem; }
-  .list__item {
+  .list__row {
     font-size: 2rem; }
-    .list__item:not(:last-child) {
-      margin-bottom: 1rem; }
+    .list__row:not(:last-child) {
+      margin-bottom: 1.5rem; }
   .list__key {
     font-size: 2.5rem;
     font-weight: 400;
-    margin-right: 1rem; }
+    margin-right: 2rem; }
+  .list__item {
+    padding: .2rem .5rem; }
 
 .row {
   max-width: 114rem;
@@ -257,3 +304,5 @@ canvas {
 
 .section-about {
   padding: 10rem 0 25rem 0; }
+  .section-about__my-photo {
+    margin-left: 7%; }

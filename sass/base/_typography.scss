@@ -30,9 +30,7 @@
     text-transform: uppercase;
     font-weight: 700;
     display: inline-block;
-    background-image: linear-gradient(to right, red, $color-white);
-    -webkit-background-clip: text;
-    color: transparent;
+    color: salmon;
     letter-spacing: 2px;
     transition: all .2s;
 
@@ -49,8 +47,13 @@
 }
 
 .paragraph {
-    font-size: 1.6rem;
+    font-size: 2rem;
+    line-height: 1.5;
     &:not(:last-child){
         margin-bottom: 3rem;
+    }
+
+    &--emphisis {
+        font-weight: bolder;
     }
 }
