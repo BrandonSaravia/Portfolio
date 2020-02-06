@@ -1,0 +1,84 @@
+.composition {
+    position: relative;
+    margin-top: 5%;
+    margin-left: 5%;
+    
+    & > * {
+        // position: absolute;
+        display: inline-block;
+        padding-top: 2rem;
+        font-size: 6.2rem;
+        color: #555;
+        width: 10rem;
+        height: 10rem;
+        background-color: black;
+        text-align: center;
+        margin: 2rem 1rem;
+        color: #fff;
+        box-shadow: -2px -2px 3px rgba(255, 255, 255, 0.5), 3px 3px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    &__javascript-logo {
+        
+        &:hover {
+            color: #F0DB4F;
+            text-shadow: 0 0 1.5rem #F0DB4F;
+        }
+    }
+
+    &__html5-logo {
+        
+        &:hover {
+            color: #F16529;
+            text-shadow: 0 0 1.5rem #F16529;
+        }
+    }
+
+    &__css3-logo {
+        
+        &:hover {
+            color: #2965f1;
+            text-shadow: 0 0 1.5rem #2965f1;
+        }
+    }
+
+    &__react-logo {
+        
+        &:hover {
+            color: #61dbfb;
+            text-shadow: 0 0 1.5rem #61dbfb;
+        }
+    }
+
+    &__less-logo {
+        
+        &:hover {
+            color: rgb(111, 111, 194);
+            text-shadow: 0 0 1.5rem rgb(111, 111, 194);
+        }
+    }
+
+    &__sass-logo {
+        
+        &:hover {
+            color: #c69;
+            text-shadow: 0 0 1.5rem #c69;
+        }
+    }
+
+    &__java-logo {
+        
+        &:hover {
+            color: orange;
+            text-shadow: 0 0 1.5rem orange;
+        }
+    }
+
+    &__python-logo {
+        
+        &:hover {
+            color: #4B8BBE;
+            text-shadow: 0 0 1.5rem #4B8BBE;
+        }
+    }
+}
