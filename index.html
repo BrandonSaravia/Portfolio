@@ -113,12 +113,12 @@
     <main>
         <section class="section-about">
             <div class="u-center-text u-margin-bottom-large">
-                <h2 class="heading-secondary u-margin-bottom-medium-small">
+                <h2 class="heading-secondary u-margin-bottom-medium-small u-move-in-place-animation">
                     About Me
                 </h2>
             </div>
             <div class="row">
-                <div class="col-1-of-2">
+                <div class="col-1-of-2 u-move-in-left-animation">
                     <h3 class="heading-tertiary u-margin-bottom-small">Who am I?</h3>
                     <p class="paragraph">
                         I'm a <span class="paragraph--emphisis">Full Stack Web Developer</span> located in <span class="paragraph--emphisis">Greenville, South Carolina</span>.
@@ -128,29 +128,29 @@
 
                     <h3 class="heading-tertiary u-margin-bottom-small">What are my Front End skills?</h3>
                     <ul class="list">
-                        <li class="list__row"><span class="list__key" onmouseover="highlightWithMultipleColors([['#F0DB4F', 'javascript'], ['#F16529', 'html5'], ['#2965f1', 'css3']]), highlightLogo([['#F0DB4F', 'javascript-logo'], ['#F16529', 'html5-logo'], ['#2965f1', 'css3-logo']])"  onmouseout="removeHighlight(['javascript', 'html5', 'css3']), removeHighlightLogo(['javascript-logo', 'html5-logo', 'css3-logo'])">Languages:</span> <span class="list__javascript list__item">Javascript</span> / <span class="list__html5 list__item">Html5</span> / <span class="list__css3 list__item">Css3</span></li>
-                        <li class="list__row"><span class="list__key" onmouseover="highlightItem('#61dbfb', ['react', 'react-redux', 'react-hooks']),  highlightLogo([['#61dbfb', 'react-logo']])"  onmouseout="removeHighlight(['react', 'react-redux', 'react-hooks']), removeHighlightLogo(['react-logo'])">Libraries:</span> <span class="list__react list__item">React</span> / <span class="list__react-redux list__item">React-Redux</span> / <span class="list__react-hooks list__item">React-Hooks</span></li>
-                        <li class="list__row"><span class="list__key" onmouseover="highlightWithMultipleColors([['#c69', 'sass'], ['rgb(111, 111, 194)', 'less']]),  highlightLogo([['#c69', 'sass-logo'], ['rgb(111, 111, 194)', 'less-logo']])"  onmouseout="removeHighlight(['sass', 'less']), removeHighlightLogo(['sass-logo', 'less-logo'])">CSS Preprocessors:</span> <span class="list__sass list__item">Sass</span> / <span class="list__less list__item">Less</span></li>
+                        <li class="list__row"><span class="list__key" onmouseover="highlight([['item', 'javascript', '#F0DB4F'], ['item', 'html5', '#F16529'], ['item', 'css3', '#2965f1'], ['logo', 'javascript-logo', '#F0DB4F'], ['logo', 'html5-logo', '#F16529'], ['logo', 'css3-logo', '#2965f1']])"  onmouseout="removeHighlight([['item', 'javascript'], ['item', 'html5'], ['item', 'css3'], ['logo', 'javascript-logo'], ['logo', 'html5-logo'], ['logo', 'css3-logo']])">Languages:</span> <span class="list__javascript list__item">Javascript</span> / <span class="list__html5 list__item">Html5</span> / <span class="list__css3 list__item">Css3</span></li>
+                        <li class="list__row"><span class="list__key" onmouseover="highlight([['item', 'react', '#61dbfb'], ['item', 'react-redux', '#61dbfb'], ['item', 'react-hooks', '#61dbfb'], ['logo', 'react-logo', '#61dbfb']])"  onmouseout="removeHighlight([['item', 'react'], ['item', 'react-redux'], ['item', 'react-hooks'], ['logo', 'react-logo']])">Libraries:</span> <span class="list__react list__item">React</span> / <span class="list__react-redux list__item">React-Redux</span> / <span class="list__react-hooks list__item">React-Hooks</span></li>
+                        <li class="list__row"><span class="list__key" onmouseover="highlight([['item', 'sass', '#c69'], ['item' ,'less', 'rgb(111, 111, 194)'], ['logo', 'sass-logo', '#c69'], ['logo', 'less-logo', 'rgb(111, 111, 194)']])"  onmouseout="removeHighlight([['item', 'sass'], ['item', 'less'], ['logo', 'sass-logo'], ['logo', 'less-logo']])">CSS Preprocessors:</span> <span class="list__sass list__item">Sass</span> / <span class="list__less list__item">Less</span></li>
                     </ul>
                     
                     <h3 class="heading-tertiary u-margin-bottom-small">What are my Back End skills?</h3>
                     <ul class="list">
-                        <li class="list__row"><span class="list__key" onmouseover="highlightWithMultipleColors([['orange', 'java'], ['#4B8BBE', 'python']])"  onmouseout="removeHighlight(['java', 'python'])">Languages:</span> <span class="list__java list__item">Java</span> / <span class="list__python list__item">Python</span></li>
-                        <li class="list__row"><span class="list__key" onmouseover="highlightWithMultipleColors([['orange', 'spring-boot'], ['#4B8BBE', 'django']])"  onmouseout="removeHighlight(['spring-boot', 'django'])">Frameworks:</span> <span class="list__spring-boot list__item">Spring Boot</span> / <span class="list__django list__item">Django</span></li>
-                        <li class="list__row"><span class="list__key" onmouseover="highlightWithMultipleColors([['lightgreen', 'postgressql'], ['lightgreen', 'mysql'], ['lightgreen', 'sqlite']])"  onmouseout="removeHighlight(['postgressql', 'mysql', 'sqlite'])">Databases:</span> <span class="list__postgressql list__item">PostgresSQL</span> / <span class="list__mysql list__item">MySQL</span> / <span class="list__sqlite list__item">SQLite</span></li>
+                        <li class="list__row"><span class="list__key" onmouseover="highlight([['item', 'java', 'orange'], ['item', 'python', '#4B8BBE'], ['logo', 'java-logo', 'orange'], ['logo', 'python-logo', '#4B8BBE']])"  onmouseout="removeHighlight([['item', 'java'], ['item', 'python'], ['logo', 'python-logo'], ['logo', 'java-logo']])">Languages:</span> <span class="list__java list__item">Java</span> / <span class="list__python list__item">Python</span></li>
+                        <li class="list__row"><span class="list__key" onmouseover="highlight([['item', 'spring-boot', 'orange'], ['item', 'django', '#4B8BBE'], ['logo', 'java-logo', 'orange'], ['logo', 'python-logo', '#4B8BBE']])"  onmouseout="removeHighlight([['item', 'spring-boot'], ['item', 'django'], ['logo', 'python-logo'], ['logo', 'java-logo']])">Frameworks:</span> <span class="list__spring-boot list__item">Spring Boot</span> / <span class="list__django list__item">Django</span></li>
+                        <li class="list__row"><span class="list__key" onmouseover="highlight([['item', 'postgressql', 'lightgreen'], ['item', 'mysql', 'lightgreen'], ['item', 'sqlite', 'lightgreen']])"  onmouseout="removeHighlight([['item', 'postgressql'], ['item', 'mysql'], ['item', 'sqlite']])">Databases:</span> <span class="list__postgressql list__item">PostgresSQL</span> / <span class="list__mysql list__item">MySQL</span> / <span class="list__sqlite list__item">SQLite</span></li>
                     </ul>
                 </div>
                 <div class="col-1-of-2">
-                    <img src="https://via.placeholder.com/465x200.jpg?text=My+Photo+placehoalder" alt="" class="section-about__my-photo">
+                    <img src="https://via.placeholder.com/465x200.jpg?text=My+Photo+placehoalder" alt="" class="section-about__my-photo u-move-in-right-animation">
                     <div class="composition">
-                        <i class="fab fa-js composition__javascript-logo" onmouseover="highlightItem('#F0DB4F', ['javascript'])" onmouseout="removeHighlight(['javascript'])"></i>
-                        <i class="fab fa-html5 composition__html5-logo" onmouseover="highlightItem('#F16529', ['html5'])" onmouseout="removeHighlight(['html5'])"></i>
-                        <i class="fab fa-css3-alt composition__css3-logo" onmouseover="highlightItem('#2965f1', ['css3'])" onmouseout="removeHighlight(['css3'])"></i>
-                        <i class="fab fa-react composition__react-logo" onmouseover="highlightItem('#61dbfb', ['react', 'react-redux', 'react-hooks'])" onmouseout="removeHighlight(['react', 'react-redux', 'react-hooks'])"></i>></i>
-                        <i class="fab fa-sass composition__sass-logo" onmouseover="highlightItem('#c69', ['sass'])" onmouseout="removeHighlight(['sass'])"></i>
-                        <i class="fab fa-less composition__less-logo" onmouseover="highlightItem('rgb(111, 111, 194)', ['less'])" onmouseout="removeHighlight(['less'])"></i>
-                        <i class="fab fa-java composition__java-logo" onmouseover="highlightItem('orange', ['java', 'spring-boot'])" onmouseout="removeHighlight(['java', 'spring-boot'])"></i>
-                        <i class="fab fa-python composition__python-logo" onmouseover="highlightItem('#4B8BBE', ['python', 'django'])" onmouseout="removeHighlight(['python', 'django'])"></i>
+                        <i class="fab fa-js composition__javascript-logo" onmouseover="highlight([['item', 'javascript', '#F0DB4F'], ['logo', 'javascript-logo', '#F0DB4F']])" onmouseout="removeHighlight([['item', 'javascript'], ['logo', 'javascript-logo']])"></i>
+                        <i class="fab fa-html5 composition__html5-logo" onmouseover="highlight([['item', 'html5', '#F16529'], ['logo', 'html5-logo', '#F16529']])" onmouseout="removeHighlight([['item', 'html5'], ['logo', 'html5-logo']])"></i>
+                        <i class="fab fa-css3-alt composition__css3-logo" onmouseover="highlight([['item', 'css3', '#2965f1'], ['logo', 'css3-logo', '#2965f1']])" onmouseout="removeHighlight([['item', 'css3'], ['logo', 'css3-logo']])"></i>
+                        <i class="fab fa-react composition__react-logo" onmouseover="highlight([['item', 'react', '#61dbfb'], ['item', 'react-redux', '#61dbfb'], ['item', 'react-hooks', '#61dbfb'], ['logo', 'react-logo', '#61dbfb']])" onmouseout="removeHighlight([['item', 'react'], ['item', 'react-redux'], ['item', 'react-hooks'], ['logo', 'react-logo']])"></i>></i>
+                        <i class="fab fa-sass composition__sass-logo" onmouseover="highlight([['item', 'sass', '#c69'], ['logo', 'sass-logo', '#c69']])" onmouseout="removeHighlight([['item', 'sass'], ['logo', 'sass-logo']])"></i>
+                        <i class="fab fa-less composition__less-logo" onmouseover="highlight([['item', 'less', 'rgb(111, 111, 194)'], ['logo', 'less-logo', 'rgb(111, 111, 194)']])" onmouseout="removeHighlight([['item', 'less'], ['logo', 'less-logo']])"></i>
+                        <i class="fab fa-java composition__java-logo" onmouseover="highlight([['item', 'java', 'orange'], ['item', 'spring-boot', 'orange'], ['logo', 'java-logo', 'orange']])" onmouseout="removeHighlight([['item', 'java'], ['item', 'spring-boot'], ['logo', 'java-logo']])"></i>
+                        <i class="fab fa-python composition__python-logo" onmouseover="highlight([['item', 'python', '#4B8BBE'], ['item', 'django', '#4B8BBE'], ['logo', 'python-logo', '#4B8BBE']])" onmouseout="removeHighlight([['item', 'python'], ['item', 'django'], ['logo', 'python-logo']])"></i>
                     </div>
                 </div>
             </div>
@@ -159,44 +159,54 @@
 
     <!-- About Section onmouseover skills highlighter -->
     <script>
-        function highlightItem(color, items) { 
-            for (let x = 0; x < items.length; x++) {
-                document.querySelector(".list__" + items[x]).style.backgroundColor = color;
+
+        function highlight(array) {
+            // takes argument [[type, classname, color], [type, classname, color], etc...]
+            for (let i = 0; i < array.length; i++) {
+                if (array[i][0] === 'item') {
+
+                    let element = document.querySelector(".list__" + array[i][1]);
+                    element.style.backgroundColor = array[i][2];
+                    element.style.fontWeight = 'bold';
+
+                } else if (array[i][0] === 'logo') {
+
+                    let element = document.querySelector(".composition__" + array[i][1]);
+                    element.style.color = array[i][2];
+                    element.style.textShadow = '0 0 1.5rem ' + array[i][2];
+
+                } else {
+
+                    console.log(array);
+                    throw console.error("highlight() argument not accepted");
+                }
             }
         }
 
-        function removeHighlight(items) {
-            for (let x = 0; x < items.length; x++) {
-                document.querySelector(".list__" + items[x]).style.backgroundColor = 'white';
+        function removeHighlight(array) {
+            // takes argument [[type, classname], [type, classname], etc...]
+            for (let i = 0; i < array.length; i++) {
+                if (array[i][0] === 'item') {
+
+                    let element = document.querySelector(".list__" + array[i][1]);
+                    element.style.backgroundColor = 'white';
+                    element.style.fontWeight = '400';
+
+                } else if (array[i][0] === 'logo') {
+
+                    element = document.querySelector(".composition__" + array[i][1]);
+                    element.style.color = 'white';
+                    element.style.textShadow = 'none';
+                } else {
+
+                    console.log(array);
+                    throw console.error("removeHighlight() argument not accepted");
+                }
             }
         }
-
-        function highlightWithMultipleColors(items) {
-            for (let x = 0; x < items.length; x++) {
-                document.querySelector(".list__" + items[x][1]).style.backgroundColor = items[x][0];
-            }
-        }
-
-        function highlightLogo(logos) {
-            console.log(logos)
-            for (let x = 0; x < logos.length; x++) {
-                console.log(logos[x][1])
-                let specifiedLogo = document.querySelector(".composition__" + logos[x][1]);
-
-                specifiedLogo.style.color = logos[x][0];
-                specifiedLogo.style.textShadow = '0 0 1.5rem ' + logos[x][0];
-            }
-        }
-
-        function removeHighlightLogo(logos) {
-            for (let x = 0; x < logos.length; x++) {
-                let specifiedItem = document.querySelector(".composition__" + logos[x]);
-
-                specifiedItem.style.textShadow = 'none';
-                specifiedItem.style.color = '#fff';
-            }
-        }
+    
     </script>
+        
 </body>
 
 </html>

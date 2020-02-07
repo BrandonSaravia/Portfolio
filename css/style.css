@@ -1,3 +1,33 @@
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInPlace {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
     v2.0 | 20110126
     License: none (public domain)
@@ -92,7 +122,7 @@ canvas {
   text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
-  color: salmon;
+  color: #000;
   letter-spacing: 2px;
   transition: all .2s; }
   .heading-secondary:hover {
@@ -132,6 +162,15 @@ canvas {
 
 .u-margin-top-huge {
   margin-top: 10rem !important; }
+
+.u-move-in-left-animation {
+  animation: moveInLeft 1s ease-out; }
+
+.u-move-in-right-animation {
+  animation: moveInRight 1s ease-out; }
+
+.u-move-in-place-animation {
+  animation: moveInPlace 2s ease-out; }
 
 .btn, .btn:link, .btn:visited {
   text-transform: uppercase;
@@ -207,7 +246,8 @@ canvas {
 .composition {
   position: relative;
   margin-top: 5%;
-  margin-left: 5%; }
+  margin-left: 5%;
+  animation: moveInBottom 1s ease-out; }
   .composition > * {
     display: inline-block;
     padding-top: 2rem;
