@@ -113,12 +113,12 @@
     <main>
         <section class="section-about">
             <div class="u-center-text u-margin-bottom-large">
-                <h2 class="heading-secondary u-margin-bottom-medium-small u-move-in-place-animation">
+                <h2 class="heading-secondary u-margin-bottom-medium-small" id="header-animation">
                     About Me
                 </h2>
             </div>
-            <div class="row">
-                <div class="col-1-of-2 u-move-in-left-animation">
+            <div class="row u-opacity-0" id='remove-about-section-opacity'>
+                <div class="col-1-of-2" id="left-content-animation">
                     <h3 class="heading-tertiary u-margin-bottom-small">Who am I?</h3>
                     <p class="paragraph">
                         I'm a <span class="paragraph--emphisis">Full Stack Web Developer</span> located in <span class="paragraph--emphisis">Greenville, South Carolina</span>.
@@ -141,8 +141,8 @@
                     </ul>
                 </div>
                 <div class="col-1-of-2">
-                    <img src="https://via.placeholder.com/465x200.jpg?text=My+Photo+placehoalder" alt="" class="section-about__my-photo u-move-in-right-animation">
-                    <div class="composition">
+                    <img src="https://via.placeholder.com/465x200.jpg?text=My+Photo+placehoalder" alt="photo of Brandon Saravia" class="section-about__my-photo" id="right-top-content-animation">
+                    <div class="composition" id="right-bottom-content-animation">
                         <i class="fab fa-js composition__javascript-logo" onmouseover="highlight([['item', 'javascript', '#F0DB4F'], ['logo', 'javascript-logo', '#F0DB4F']])" onmouseout="removeHighlight([['item', 'javascript'], ['logo', 'javascript-logo']])"></i>
                         <i class="fab fa-html5 composition__html5-logo" onmouseover="highlight([['item', 'html5', '#F16529'], ['logo', 'html5-logo', '#F16529']])" onmouseout="removeHighlight([['item', 'html5'], ['logo', 'html5-logo']])"></i>
                         <i class="fab fa-css3-alt composition__css3-logo" onmouseover="highlight([['item', 'css3', '#2965f1'], ['logo', 'css3-logo', '#2965f1']])" onmouseout="removeHighlight([['item', 'css3'], ['logo', 'css3-logo']])"></i>
@@ -155,7 +155,99 @@
                 </div>
             </div>
         </section>
+
+        <section class="section-projects">
+            <div class="u-center-text u-margin-bottom-large">
+                <h2 class="heading-secondary u-margin-bottom-medium-small" id="header-animation">
+                    Recent Projects
+                </h2>
+            </div>
+            <div class="row u-opacity-0" id='remove-projects-section-opacity'>
+
+                <div class="col-1-of-3">
+                    <div class="card">
+                        <div class="card__picture">
+                            &nbsp;
+                        </div>
+                        <h4 class="card__heading">
+                            <span class="card__heading-span">
+                                MacBuilt Roofing
+                            </span>
+                        </h4>
+                    </div>
+                </div>
+
+                <div class="col-1-of-3">
+                    <div class="card">
+                        <div class="card__picture">
+                            &nbsp;
+                        </div>
+                        <h4 class="card__heading">
+                            <span class="card__heading-span">
+                                Spotify Mock
+                            </span>
+                        </h4>
+                    </div>
+                </div>
+
+                <div class="col-1-of-3">
+                    <div class="card">
+                        <div class="card__picture">
+                            &nbsp;
+                        </div>
+                        <h4 class="card__heading">
+                            <span class="card__heading-span">
+                                Rent Me
+                            </span>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-contact">
+            <div class="u-center-text u-margin-bottom-large">
+                <h2 class="heading-secondary u-margin-bottom-medium-small" id="header-animation">
+                    Contact Me
+                </h2>
+            </div>
+            <form class="form" method="POST" name="contact-form" action="form-to-email-handler.php">
+                <div class="form__container">
+                    <input 
+                        class="form__input form__input--name"
+                        type="text"
+                        name="name"
+                        placeholder="Name"
+                        required
+                    />
+                    <input 
+                        class="form__input form__input--email"
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        required
+                    />
+                    <textarea 
+                        class="form__input form__input--message"
+                        name="message"
+                        placeholder="Message"
+                        required
+                    ></textarea>
+                    <input 
+                        class="form__input form__input--submit"
+                        type="submit"
+                        value='Submit'
+                    />
+                </div>
+            </form>
+        </section>
     </main>
+
+    <footer class="footer">
+        <div class="footer__copyright">
+            Brandon Saravia &copy;2020
+        </div>
+    </footer>
 
     <!-- About Section onmouseover skills highlighter -->
     <script>
@@ -206,7 +298,50 @@
         }
     
     </script>
-        
-</body>
 
+    <!-- onScroll Animations -->
+    <script>
+
+        let used = false;
+        
+        window.addEventListener("scroll", () => {
+            const scrolled = window.scrollY;
+
+            if (Math.ceil(scrolled) > window.innerHeight - .2 * window.innerHeight && used === false) {
+                let opacity = document.getElementById("remove-about-section-opacity");
+
+                opacity.classList.remove("u-opacity-0");
+
+                let leftContent = document.getElementById("left-content-animation");
+                let rightTopContent = document.getElementById("right-top-content-animation");
+                let rightBottomContent = document.getElementById("right-bottom-content-animation");
+
+                leftContent.classList.add('u-move-in-left-animation');
+                rightTopContent.classList.add('u-move-in-right-animation');
+                rightBottomContent.classList.add('u-move-in-bottom-animation');
+
+                used = true
+            } 
+
+            if (Math.ceil(scrolled) < window.innerHeight - .9 * window.innerHeight && used === true) {
+                let opacity = document.getElementById("remove-about-section-opacity");
+
+                opacity.classList.add("u-opacity-0");
+
+                let leftContent = document.getElementById("left-content-animation");
+                let rightTopContent = document.getElementById("right-top-content-animation");
+                let rightBottomContent = document.getElementById("right-bottom-content-animation");
+
+                leftContent.classList.remove('u-move-in-left-animation');
+                rightTopContent.classList.remove('u-move-in-right-animation');
+                rightBottomContent.classList.remove('u-move-in-bottom-animation');
+
+                used = false
+            }
+
+        });
+        
+    </script>
+
+</body>
 </html>

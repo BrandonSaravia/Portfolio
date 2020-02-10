@@ -172,6 +172,12 @@ canvas {
 .u-move-in-place-animation {
   animation: moveInPlace 2s ease-out; }
 
+.u-move-in-bottom-animation {
+  animation: moveInBottom 1s ease-out; }
+
+.u-opacity-0 {
+  opacity: 0; }
+
 .btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
@@ -246,8 +252,7 @@ canvas {
 .composition {
   position: relative;
   margin-top: 5%;
-  margin-left: 5%;
-  animation: moveInBottom 1s ease-out; }
+  margin-left: 5%; }
   .composition > * {
     display: inline-block;
     padding-top: 2rem;
