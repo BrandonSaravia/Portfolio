@@ -1,0 +1,19 @@
+.footer {
+    background-color: darken(#333, 3);
+    padding: 4rem 0;
+    text-align: center;
+
+    &__copyright {
+        color: $color-white;
+        font-size: 1.65rem;
+        display: inline-block;
+
+        &-name {
+            font-style: italic;
+        }
+
+        &-logo {
+            color: darken(#cfb8b9, 20);
+        }
+    }
+}
