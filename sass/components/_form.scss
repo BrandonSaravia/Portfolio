@@ -1,0 +1,69 @@
+.form {
+    max-width: 600px;
+    margin: 0 auto;
+
+    &__container {
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
+    }
+
+    &__input {
+        width: 100%;
+        display: block;
+        padding: .5rem 0 .5rem 1rem;
+        font-size: 1.8rem;
+        margin-bottom: .5rem;
+        color: #fff;
+        background-color: #a67b7d;
+        border: none;
+
+        &::placeholder {
+            color: rgba($color-white, .6);
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($color-black, .1);
+            border-bottom: 3px solid white;
+        }
+
+        &:focus:invalid {
+            border-bottom: 3px solid red;
+        }
+
+        &--message {
+            font-size: 2rem;
+        }
+    }
+
+    &__label {
+        font-size: 1.7rem;
+        font-weight: 700;
+        margin-left: 1rem;
+        margin-bottom: 0.7rem;
+        margin-top: .7rem;
+        color: #fff;
+        display: block;
+        transition: all .3s;
+    }
+
+    &__btn {
+        width: 25%;
+        align-self: flex-end;
+        height: 4rem;
+    }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: $color-white;
+    transition: background-color 5000s ease-in-out 0s;
+}

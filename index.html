@@ -16,7 +16,7 @@
 
 <body>
 
-    <header class="header">
+    <header class="header" id="header">
         <div class="header__container">
             <div class="header__text-box">
                 <h1 class="heading-primary">
@@ -111,7 +111,7 @@
     </script>
 
     <main>
-        <section class="section-about">
+        <section class="section-about" id="about">
             <div class="u-center-text u-margin-bottom-large">
                 <h2 class="heading-secondary u-margin-bottom-medium-small" id="header-animation">
                     About Me
@@ -156,7 +156,7 @@
             </div>
         </section>
 
-        <section class="section-projects">
+        <section class="section-projects" id="projects">
             <div class="bg-video">
                 <video class="bg-video__content" autoplay muted loop>
                     <source src="img/coverr-typing-in-laptop-1578678668153.mp4" type="video/mp4">
@@ -214,14 +214,15 @@
             </div>
         </section>
 
-        <section class="section-contact">
-            <div class="u-center-text u-margin-bottom-large">
-                <h2 class="heading-secondary heading-secondary--white u-margin-bottom-medium-small u-margin-top-x-large" id="header-animation">
+        <section class="section-contact" id="contact">
+            <div class="u-center-text u-margin-bottom-medium-large">
+                <h2 class="heading-secondary heading-secondary--white u-margin-bottom-medium-small u-margin-top-x-large" id="contact">
                     Contact Me
                 </h2>
             </div>
-            <form class="form" method="POST" name="contact-form" action="form-to-email-handler.php">
+            <form class="form u-center-text" method="POST" name="contact-form" action="form-to-email-handler.php">
                 <div class="form__container">
+                    <label for="name" class="form__label">Name</label>
                     <input 
                         class="form__input form__input--name"
                         type="text"
@@ -229,21 +230,24 @@
                         placeholder="Name"
                         required
                     />
+                    <label for="email" class="form__label">Email</label>
                     <input 
                         class="form__input form__input--email"
                         type="email"
                         name="email"
                         placeholder="Email"
                         required
-                    />
+                    />                    
+                    <label for="email" class="form__label">Message</label>
                     <textarea 
                         class="form__input form__input--message"
                         name="message"
                         placeholder="Message"
+                        rows="7"
                         required
                     ></textarea>
                     <input 
-                        class="form__input form__input--submit"
+                        class="btn form__btn"
                         type="submit"
                         value='Submit'
                     />
@@ -254,7 +258,7 @@
 
     <footer class="footer">
         <div class="footer__copyright">
-            Brandon Saravia &copy;2020
+            <span class="footer__copyright-name">Brandon Saravia</span> <span class="footer__copyright-logo">&copy;2020</span>
         </div>
     </footer>
 
@@ -312,11 +316,26 @@
     <script>
 
         let used = false;
+        let aboutSectionSeen = false;
+
+        // let header = document.getElementById("header");
+        // let about = document.getElementById("about");
+        // let projects = document.getElementById("projects");
+        // let contact = document.getElementById("contact");
+        // let a = header.scrollHeight;
+        // let b = about.scrollHeight;
+        // let c = projects.scrollHeight;
+        // let d = contact.scrollHeight;
+
+        // console.log(a + b + c + d)
+        // console.log(window.height)
+
         
         window.addEventListener("scroll", () => {
             const scrolled = window.scrollY;
 
-            if (Math.ceil(scrolled) > window.innerHeight - .2 * window.innerHeight && used === false) {
+            // about section animation
+            if (Math.ceil(scrolled) > window.innerHeight - .5 * window.innerHeight && aboutSectionSeen === false) {
                 let opacity = document.getElementById("remove-about-section-opacity");
 
                 opacity.classList.remove("u-opacity-0");
@@ -329,9 +348,50 @@
                 rightTopContent.classList.add('u-move-in-right-animation');
                 rightBottomContent.classList.add('u-move-in-bottom-animation');
 
-                used = true
+                aboutSectionSeen = true;
+                used = true;
             } 
 
+
+            // // projects section animations
+            // if (Math.ceil(scrolled) > window.innerHeight - .5 * window.innerHeight && aboutSectionSeen === false) {
+            //     let opacity = document.getElementById("remove-about-section-opacity");
+
+            //     opacity.classList.remove("u-opacity-0");
+
+            //     let leftContent = document.getElementById("left-content-animation");
+            //     let rightTopContent = document.getElementById("right-top-content-animation");
+            //     let rightBottomContent = document.getElementById("right-bottom-content-animation");
+
+            //     leftContent.classList.add('u-move-in-left-animation');
+            //     rightTopContent.classList.add('u-move-in-right-animation');
+            //     rightBottomContent.classList.add('u-move-in-bottom-animation');
+
+            //     aboutSectionSeen = true;
+            //     used = true;
+            // } 
+
+
+            // // about section animation
+            // if (Math.ceil(scrolled) > window.innerHeight - .5 * window.innerHeight && aboutSectionSeen === false) {
+            //     let opacity = document.getElementById("remove-about-section-opacity");
+
+            //     opacity.classList.remove("u-opacity-0");
+
+            //     let leftContent = document.getElementById("left-content-animation");
+            //     let rightTopContent = document.getElementById("right-top-content-animation");
+            //     let rightBottomContent = document.getElementById("right-bottom-content-animation");
+
+            //     leftContent.classList.add('u-move-in-left-animation');
+            //     rightTopContent.classList.add('u-move-in-right-animation');
+            //     rightBottomContent.classList.add('u-move-in-bottom-animation');
+
+            //     aboutSectionSeen = true;
+            //     used = true;
+            // } 
+
+
+            // reset animations
             if (Math.ceil(scrolled) < window.innerHeight - .9 * window.innerHeight && used === true) {
                 let opacity = document.getElementById("remove-about-section-opacity");
 
@@ -345,7 +405,8 @@
                 rightTopContent.classList.remove('u-move-in-right-animation');
                 rightBottomContent.classList.remove('u-move-in-bottom-animation');
 
-                used = false
+                aboutSectionSeen = false;
+                used = false;
             }
 
         });
