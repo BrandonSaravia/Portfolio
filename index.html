@@ -220,7 +220,7 @@
                     Contact Me
                 </h2>
             </div>
-            <form class="form u-center-text" method="POST" name="contact-form" action="form-to-email-handler.php">
+            <form class="form u-center-text" method="post" action="contact.php">
                 <div class="form__container">
                     <label for="name" class="form__label">Name</label>
                     <input 
@@ -246,10 +246,10 @@
                         rows="7"
                         required
                     ></textarea>
-                    <input 
+                    <input
                         class="btn form__btn"
                         type="submit"
-                        value='Submit'
+                        name="submit"
                     />
                 </div>
             </form>
