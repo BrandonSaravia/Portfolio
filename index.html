@@ -220,7 +220,7 @@
                     Contact Me
                 </h2>
             </div>
-            <form class="form u-center-text" method="post" action="contact.php">
+            <form class="form u-center-text" method="POST" data-netlify="true">
                 <div class="form__container">
                     <label for="name" class="form__label">Name</label>
                     <input 
@@ -246,15 +246,16 @@
                         rows="7"
                         required
                     ></textarea>
-                    <input
+                    <button
                         class="btn form__btn"
                         type="submit"
-                        name="submit"
-                    />
+                    >Submit</button>
+
                 </div>
             </form>
         </section>
     </main>
+    
 
     <footer class="footer">
         <div class="footer__copyright">

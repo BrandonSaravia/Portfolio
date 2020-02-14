@@ -389,7 +389,8 @@ canvas {
   .form__btn {
     width: 25%;
     align-self: flex-end;
-    height: 4rem; }
+    height: 4rem;
+    color: black; }
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
