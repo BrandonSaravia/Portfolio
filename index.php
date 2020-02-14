@@ -309,7 +309,6 @@
                 }
             }
         }
-    
     </script>
 
     <!-- onScroll Animations -->
