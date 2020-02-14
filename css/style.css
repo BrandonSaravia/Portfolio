@@ -145,6 +145,8 @@ canvas {
     margin-bottom: 3rem; }
   .paragraph--emphisis {
     font-weight: bolder; }
+  .paragraph--white {
+    color: white; }
 
 .u-center-text {
   text-align: center !important; }
@@ -353,7 +355,10 @@ canvas {
 
 .form {
   max-width: 600px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  border: 1px solid white;
+  padding: 2rem;
+  border-radius: 17px; }
   .form__container {
     display: flex;
     flex-flow: column;
@@ -389,8 +394,11 @@ canvas {
   .form__btn {
     width: 25%;
     align-self: flex-end;
+    margin-top: 3rem;
     height: 4rem;
     color: black; }
+  .form__recaptcha {
+    margin-top: 1rem; }
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,

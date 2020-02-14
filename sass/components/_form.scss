@@ -1,6 +1,9 @@
 .form {
     max-width: 600px;
     margin: 0 auto;
+    border: 1px solid white;
+    padding: 2rem;
+    border-radius: 17px;
 
     &__container {
         display: flex;
@@ -51,8 +54,13 @@
     &__btn {
         width: 25%;
         align-self: flex-end;
+        margin-top: 3rem;
         height: 4rem;
         color: black;
+    }
+
+    &__recaptcha {
+        margin-top: 1rem;
     }
 }
 
