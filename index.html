@@ -24,7 +24,7 @@
                     <span class="heading-primary--sub">Full Stack Web Developer</span>
                 </h1>
             </div>
-            <a href="#" class="btn btn--text">View my work<i class="fas fa-arrow-right"></i></a>
+            <a onclick="scrollToID('projects')" class="btn btn--text">View my work<i class="fas fa-arrow-right"></i></a>
 
         </div>
     </header>
@@ -257,7 +257,11 @@
             </form>
         </section>
     </main>
-    
+
+    <button onclick="scrollToID('header')">header</button>
+    <button onclick="scrollToID('about')">about</button>
+    <button onclick="scrollToID('projects')">projects</button>
+    <button onclick="scrollToID('contact')">contact</button>
 
     <footer class="footer">
         <div class="footer__copyright">
@@ -320,19 +324,10 @@
         let used = false;
         let aboutSectionSeen = false;
 
-        // let header = document.getElementById("header");
-        // let about = document.getElementById("about");
-        // let projects = document.getElementById("projects");
-        // let contact = document.getElementById("contact");
-        // let a = header.scrollHeight;
-        // let b = about.scrollHeight;
-        // let c = projects.scrollHeight;
-        // let d = contact.scrollHeight;
+        function scrollToID(id) {
+            document.getElementById(id).scrollIntoView(true);
+        }
 
-        // console.log(a + b + c + d)
-        // console.log(window.height)
-
-        
         window.addEventListener("scroll", () => {
             const scrolled = window.scrollY;
 
@@ -353,44 +348,6 @@
                 aboutSectionSeen = true;
                 used = true;
             } 
-
-
-            // // projects section animations
-            // if (Math.ceil(scrolled) > window.innerHeight - .5 * window.innerHeight && aboutSectionSeen === false) {
-            //     let opacity = document.getElementById("remove-about-section-opacity");
-
-            //     opacity.classList.remove("u-opacity-0");
-
-            //     let leftContent = document.getElementById("left-content-animation");
-            //     let rightTopContent = document.getElementById("right-top-content-animation");
-            //     let rightBottomContent = document.getElementById("right-bottom-content-animation");
-
-            //     leftContent.classList.add('u-move-in-left-animation');
-            //     rightTopContent.classList.add('u-move-in-right-animation');
-            //     rightBottomContent.classList.add('u-move-in-bottom-animation');
-
-            //     aboutSectionSeen = true;
-            //     used = true;
-            // } 
-
-
-            // // about section animation
-            // if (Math.ceil(scrolled) > window.innerHeight - .5 * window.innerHeight && aboutSectionSeen === false) {
-            //     let opacity = document.getElementById("remove-about-section-opacity");
-
-            //     opacity.classList.remove("u-opacity-0");
-
-            //     let leftContent = document.getElementById("left-content-animation");
-            //     let rightTopContent = document.getElementById("right-top-content-animation");
-            //     let rightBottomContent = document.getElementById("right-bottom-content-animation");
-
-            //     leftContent.classList.add('u-move-in-left-animation');
-            //     rightTopContent.classList.add('u-move-in-right-animation');
-            //     rightBottomContent.classList.add('u-move-in-bottom-animation');
-
-            //     aboutSectionSeen = true;
-            //     used = true;
-            // } 
 
 
             // reset animations

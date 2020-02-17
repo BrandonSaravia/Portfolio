@@ -83,7 +83,8 @@ table {
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -194,7 +195,7 @@ canvas {
   position: absolute;
   top: 0;
   left: 0;
-  height: 101%;
+  height: 105%;
   width: 100%;
   z-index: -1;
   opacity: .15;
