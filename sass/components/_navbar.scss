@@ -1,0 +1,25 @@
+.navbar {
+    display: flex;
+    background-color: #333;
+    position: sticky;
+    position: -webkit-sticky;
+    padding: 2rem;
+    border-bottom: 5px solid #a67b7d;
+
+    &__container {
+        display: flex;
+    }
+
+    &__link {
+        color: $color-white;
+        font-size: 2rem;
+
+        &--btn {
+
+        }
+
+        &--logo {
+
+        }
+    }
+}
