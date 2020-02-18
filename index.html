@@ -111,6 +111,21 @@
     </script>
 
     <main>
+        <div class="navbar">
+            <ul class="navbar__container">
+                <li class="navbar__link"><a onclick="scrollToID('header')" >Home</a></li>
+                <li class="navbar__link"><a onclick="scrollToID('about')">About</a></li>
+                <li class="navbar__link"><a onclick="scrollToID('projects')">Projects</a></li>
+                <li class="navbar__link"><a onclick="scrollToID('contact')">Contact</a></li>
+            </ul>
+
+            <ul class="navbar__container">
+                <li class="navbar__link navbar__link--logo"><a href="https://github.com/BrandonSaravia"><i class="fab fa-github-square"></i></a></li>
+                <li class="navbar__link navbar__link--logo"><a href="https://www.linkedin.com/in/brandon-saravia-24b59b182/"><i class="fab fa-linkedin"></i></a></li>
+                <li class="navbar__link"><a class="btn navbar__link--btn" onclick="scrollToID('contact')">Contact Me</a></li>
+            </ul>
+        </div>
+
         <section class="section-about" id="about">
             <div class="u-center-text u-margin-bottom-large">
                 <h2 class="heading-secondary u-margin-bottom-medium-small" id="header-animation">
@@ -318,7 +333,7 @@
         }
     </script>
 
-    <!-- onScroll Animations -->
+    <!-- Scroll Animations -->
     <script>
 
         let used = false;
@@ -328,8 +343,58 @@
             document.getElementById(id).scrollIntoView(true);
         }
 
+        let headerPassed = false;
+        let aboutPassed = false;
+        let projectsPassed = false;
+        let contactPassed = false;
+
         window.addEventListener("scroll", () => {
             const scrolled = window.scrollY;
+
+            var header = document.getElementById('header');
+            var headerToTop = header.getBoundingClientRect().top;
+
+            var about = document.getElementById('about');
+            var aboutToTop = about.getBoundingClientRect().top;
+
+            var projects = document.getElementById('projects');
+            var projectsToTop = projects.getBoundingClientRect().top;
+
+            var contact = document.getElementById('contact');
+            var contactToTop = contact.getBoundingClientRect().top;
+
+            if (headerToTop <= 0 && headerPassed === false) {
+                // make nav-bar emphisize header
+                headerPassed = true;
+                console.log("header passed");
+            }
+            if (aboutToTop <= 0 && aboutPassed === false) {
+                // make nav-bar emphisize about
+                aboutPassed = true;
+                console.log("about passed");
+            }
+            if (projectsToTop <= 0 && projectsPassed === false) {
+                // make nav-bar emphisize projects
+                projectsPassed = true;
+                console.log("projects passed");
+            }
+            if (contactToTop <= 0 && contactPassed === false) {
+                // make nav-bar emphisize contact
+                contactPassed = true;
+                console.log("contact passed");
+            }
+            if (contactToTop > 0 && contactPassed === true) {
+                console.log('location projects');
+                contactPassed = false;
+            }
+            if (projectsToTop > 0 && projectsPassed === true) {
+                console.log('location about');
+                projectsPassed = false;
+            }
+            if (aboutToTop > 0 && aboutPassed === true) {
+                console.log('location header');
+                aboutPassed = false;
+            }
 
             // about section animation
             if (Math.ceil(scrolled) > window.innerHeight - .5 * window.innerHeight && aboutSectionSeen === false) {
