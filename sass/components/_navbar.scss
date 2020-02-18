@@ -1,25 +1,75 @@
 .navbar {
     display: flex;
     background-color: #333;
-    position: sticky;
-    position: -webkit-sticky;
-    padding: 2rem;
+    overflow: hidden;
+    padding: 1.2rem;
     border-bottom: 5px solid #a67b7d;
+    justify-content: space-between;
+
 
     &__container {
         display: flex;
+
+
+        &--1 {
+            & > * {
+                margin-left: 4.5rem;
+            }
+        }
+
+        &--2 {
+            & > *:not(:last-child) {
+                margin-right: 3.8rem;
+            }
+
+            &:last-child {
+                margin-right: 4.5rem;
+            }
+        }
     }
 
     &__link {
         color: $color-white;
         font-size: 2rem;
+        transition: all .2s ease-in;
+        align-self: center;
+        cursor: pointer;
+
+        &:hover {
+            color: #a67b7d;
+        }
 
         &--btn {
+            padding: .5rem;
+            border: 1px solid $color-white;
 
+            &:hover {
+                transition: all .2s ease-in;
+                border-radius: 3px;
+                background-color: $color-white;
+                border: 1px solid #a67b7d;
+            }
         }
 
         &--logo {
+            color: white;
+            font-size: 3rem;
 
+            &:hover {
+                color: #a67b7d;
+            }
         }
+    }
+}
+
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000000000;
+
+    & + .section-about {
+        padding-top: 14.2rem !important;
     }
 }
