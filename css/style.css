@@ -176,6 +176,9 @@ canvas {
 .u-margin-top-huge {
   margin-top: 10rem !important; }
 
+.u-margin-top-small {
+  margin-top: 2rem !important; }
+
 .u-move-in-left-animation {
   animation: moveInLeft 1s ease-out; }
 
@@ -429,15 +432,47 @@ select:-webkit-autofill:focus {
 .navbar {
   display: flex;
   background-color: #333;
-  position: sticky;
-  position: -webkit-sticky;
-  padding: 2rem;
-  border-bottom: 5px solid #a67b7d; }
+  overflow: hidden;
+  padding: 1.2rem;
+  border-bottom: 5px solid #a67b7d;
+  justify-content: space-between; }
   .navbar__container {
     display: flex; }
+    .navbar__container--1 > * {
+      margin-left: 4.5rem; }
+    .navbar__container--2 > *:not(:last-child) {
+      margin-right: 3.8rem; }
+    .navbar__container--2:last-child {
+      margin-right: 4.5rem; }
   .navbar__link {
     color: #fff;
-    font-size: 2rem; }
+    font-size: 2rem;
+    transition: all .2s ease-in;
+    align-self: center;
+    cursor: pointer; }
+    .navbar__link:hover {
+      color: #a67b7d; }
+    .navbar__link--btn {
+      padding: .5rem;
+      border: 1px solid #fff; }
+      .navbar__link--btn:hover {
+        transition: all .2s ease-in;
+        border-radius: 3px;
+        background-color: #fff;
+        border: 1px solid #a67b7d; }
+    .navbar__link--logo {
+      color: white;
+      font-size: 3rem; }
+      .navbar__link--logo:hover {
+        color: #a67b7d; }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000000000; }
+  .sticky + .section-about {
+    padding-top: 14.2rem !important; }
 
 .footer {
   background-color: #2b2b2b;

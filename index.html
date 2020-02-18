@@ -109,24 +109,26 @@
         window.addEventListener('mousemove', onMouseMove)
 
     </script>
-
-    <main>
-        <div class="navbar">
-            <ul class="navbar__container">
+    
+    <main class="main" id="about">
+        
+        <div class="navbar" id="navbar">
+            <ul class="navbar__container navbar__container--1">
                 <li class="navbar__link"><a onclick="scrollToID('header')" >Home</a></li>
                 <li class="navbar__link"><a onclick="scrollToID('about')">About</a></li>
                 <li class="navbar__link"><a onclick="scrollToID('projects')">Projects</a></li>
                 <li class="navbar__link"><a onclick="scrollToID('contact')">Contact</a></li>
             </ul>
 
-            <ul class="navbar__container">
-                <li class="navbar__link navbar__link--logo"><a href="https://github.com/BrandonSaravia"><i class="fab fa-github-square"></i></a></li>
-                <li class="navbar__link navbar__link--logo"><a href="https://www.linkedin.com/in/brandon-saravia-24b59b182/"><i class="fab fa-linkedin"></i></a></li>
+            <ul class="navbar__container navbar__container--2">
+                <li class="navbar__link"><a href="https://github.com/BrandonSaravia"><i class="fab fa-github-square navbar__link--logo"></i></a></li>
+                <li class="navbar__link"><a href="https://www.linkedin.com/in/brandon-saravia-24b59b182/"><i class="fab fa-linkedin  navbar__link--logo"></i></a></li>
                 <li class="navbar__link"><a class="btn navbar__link--btn" onclick="scrollToID('contact')">Contact Me</a></li>
             </ul>
         </div>
 
-        <section class="section-about" id="about">
+
+        <section class="section-about" >
             <div class="u-center-text u-margin-bottom-large">
                 <h2 class="heading-secondary u-margin-bottom-medium-small" id="header-animation">
                     About Me
@@ -181,7 +183,7 @@
             </div>
 
             <div class="u-center-text u-margin-bottom-large">
-                <h2 class="heading-secondary u-margin-bottom-medium-small" id="header-animation">
+                <h2 class="heading-secondary u-margin-bottom-medium-small u-margin-top-small" id="header-animation">
                     Recent Projects
                 </h2>
             </div>
@@ -229,7 +231,7 @@
             </div>
         </section>
 
-        <section class="section-contact" id="contact">
+        <section class="section-contact">
             <div class="u-center-text u-margin-bottom-medium-large">
                 <h2 class="heading-secondary heading-secondary--white u-margin-bottom-medium-small u-margin-top-x-large" id="contact">
                     Contact Me
@@ -273,12 +275,8 @@
         </section>
     </main>
 
-    <button onclick="scrollToID('header')">header</button>
-    <button onclick="scrollToID('about')">about</button>
-    <button onclick="scrollToID('projects')">projects</button>
-    <button onclick="scrollToID('contact')">contact</button>
 
-    <footer class="footer">
+    <footer class="footer" id="contact">
         <div class="footer__copyright">
             <span class="footer__copyright-name">Brandon Saravia</span> <span class="footer__copyright-logo">&copy;2020</span>
         </div>
@@ -339,8 +337,15 @@
         let used = false;
         let aboutSectionSeen = false;
 
+        // scroll to section of page
         function scrollToID(id) {
-            document.getElementById(id).scrollIntoView(true);
+            let section = document.getElementById(id);
+            if (section === "contact") {
+                window.scrollTo(0,document.body.scrollHeight);
+            } else {
+                section.scrollIntoView(true);
+            }
+            
         }
 
         let headerPassed = false;
@@ -348,7 +353,22 @@
         let projectsPassed = false;
         let contactPassed = false;
 
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
         window.addEventListener("scroll", () => {
+
+            // make navbar sticky
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky");
+                console.log(navbar.classList);
+            }
+            if (window.pageYOffset < sticky){
+                navbar.classList.remove("sticky");
+                console.log(navbar.classList);
+            }
+
+            // know section user is focused on
             const scrolled = window.scrollY;
 
             var header = document.getElementById('header');
