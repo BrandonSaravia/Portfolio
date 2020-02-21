@@ -441,7 +441,7 @@ select:-webkit-autofill:focus {
     .navbar__container--1 > * {
       margin-left: 4.5rem; }
     .navbar__container--2 > *:not(:last-child) {
-      margin-right: 3.8rem; }
+      margin-right: 2rem; }
     .navbar__container--2:last-child {
       margin-right: 4.5rem; }
   .navbar__link {

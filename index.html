@@ -111,13 +111,13 @@
     </script>
     
     <main class="main" id="about">
-        
+
         <div class="navbar" id="navbar">
             <ul class="navbar__container navbar__container--1">
-                <li class="navbar__link"><a onclick="scrollToID('header')" >Home</a></li>
-                <li class="navbar__link"><a onclick="scrollToID('about')">About</a></li>
-                <li class="navbar__link"><a onclick="scrollToID('projects')">Projects</a></li>
-                <li class="navbar__link"><a onclick="scrollToID('contact')">Contact</a></li>
+                <li class="navbar__link" id='header-link'><a onclick="scrollToID('header')" >Home</a></li>
+                <li class="navbar__link" id='about-link'><a onclick="scrollToID('about')">About</a></li>
+                <li class="navbar__link" id='projects-link'><a onclick="scrollToID('projects')">Projects</a></li>
+                <li class="navbar__link" id='contact-link'><a onclick="scrollToID('contact')">Contact</a></li>
             </ul>
 
             <ul class="navbar__container navbar__container--2">
@@ -231,7 +231,7 @@
             </div>
         </section>
 
-        <section class="section-contact">
+        <section class="section-contact" id="contact">
             <div class="u-center-text u-margin-bottom-medium-large">
                 <h2 class="heading-secondary heading-secondary--white u-margin-bottom-medium-small u-margin-top-x-large" id="contact">
                     Contact Me
@@ -276,7 +276,7 @@
     </main>
 
 
-    <footer class="footer" id="contact">
+    <footer class="footer">
         <div class="footer__copyright">
             <span class="footer__copyright-name">Brandon Saravia</span> <span class="footer__copyright-logo">&copy;2020</span>
         </div>
@@ -341,11 +341,10 @@
         function scrollToID(id) {
             let section = document.getElementById(id);
             if (section === "contact") {
-                window.scrollTo(0,document.body.scrollHeight);
+                section.scrollIntoView(false);
             } else {
                 section.scrollIntoView(true);
             }
-            
         }
 
         let headerPassed = false;
@@ -385,6 +384,12 @@
 
             if (headerToTop <= 0 && headerPassed === false) {
                 // make nav-bar emphisize header
+                var head = document.getElementById("header-link")
+                var about = document.getElementById("about-link")
+                var projects = document.getElementById("projects-link")
+                var contact = document.getElementById("contact-link")
+                if (head.classList.contains(""))
+
                 headerPassed = true;
                 console.log("header passed");
             }
