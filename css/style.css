@@ -156,7 +156,7 @@ canvas {
   margin-bottom: 8rem !important; }
 
 .u-margin-bottom-medium-large {
-  margin-bottom: 5rem !important; }
+  margin-bottom: 3rem !important; }
 
 .u-margin-bottom-medium {
   margin-bottom: 4rem !important; }
@@ -287,7 +287,8 @@ canvas {
   border-radius: 3px;
   overflow: hidden;
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-  position: relative; }
+  position: relative;
+  cursor: pointer; }
   .card:hover {
     transform: translateY(-1rem) scale(1.1);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
@@ -466,6 +467,9 @@ select:-webkit-autofill:focus {
       .navbar__link--logo:hover {
         color: #a67b7d; }
 
+.link-activated {
+  color: #a67b7d; }
+
 .sticky {
   position: fixed;
   top: 0;
@@ -544,4 +548,4 @@ select:-webkit-autofill:focus {
   background-color: #333;
   clip-path: polygon(0 0, 50% 12.5%, 100% 0, 100% 100%, 0% 100%);
   margin-top: -10rem;
-  padding-bottom: 15rem; }
+  padding-bottom: 12rem; }
