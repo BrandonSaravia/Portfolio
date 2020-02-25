@@ -188,8 +188,7 @@
                 </h2>
             </div>
 
-            <!-- <div class="row u-opacity-0" id='remove-projects-section-opacity'> -->
-            <div class="row" id='remove-projects-section-opacity'>
+            <div class="row u-opacity-0" id='remove-projects-section-opacity'>
                 <div class="col-1-of-3">
                     <div class="card">
                         <div class="card__picture card__picture--1">
@@ -238,7 +237,7 @@
                 </h2>
             </div>
 
-            <form class="form u-center-text" method="POST" data-netlify="true" data-netlify-recaptcha="true" action=''>
+            <form class="form u-center-text u-opacity-0" id="remove-contact-section-opacity" method="POST" data-netlify="true" data-netlify-recaptcha="true" action=''>
                 <div class="form__container">
                     <label for="name" class="form__label">Name</label>
                     <input 
@@ -409,6 +408,10 @@
 
         function projectsAnimation() {
             if (runAnimation[1] === true) {
+                let opacity = document.getElementById("remove-projects-section-opacity");
+                opacity.classList.remove("u-opacity-0");
+
+                opacity.classList.add('u-move-in-bottom-animation');
 
                 runAnimation[1] = false
             }
@@ -416,6 +419,10 @@
 
         function contactAnimation() {
             if (runAnimation[2] === true) {
+                let opacity = document.getElementById("remove-contact-section-opacity");
+                opacity.classList.remove("u-opacity-0");
+
+                opacity.classList.add('u-move-in-bottom-animation');
 
                 runAnimation[2] = false
             }
@@ -474,6 +481,8 @@
                     contactLink.classList.remove("link-activated");
                 }
 
+                projectsAnimation();
+
                 currentLocation = "projects";
 
             } else if (scrolled >= contactSectionLocation && currentLocation != "contact") {
@@ -483,6 +492,8 @@
                 if (projectsLink.classList.contains("link-activated")) {
                     projectsLink.classList.remove("link-activated");
                 }
+
+                contactAnimation();
 
                 currentLocation = "contact"
             } 
@@ -499,17 +510,22 @@
                 }
 
                 if (runReset === true) {
-                    let opacity = document.getElementById("remove-about-section-opacity");
-
-                    opacity.classList.add("u-opacity-0");
+                    let aboutOpacity = document.getElementById("remove-about-section-opacity");
+                    let projectsOpacity = document.getElementById("remove-projects-section-opacity");
+                    let contactOpacity = document.getElementById("remove-contact-section-opacity");
+                    aboutOpacity.classList.add("u-opacity-0");
+                    projectsOpacity.classList.add("u-opacity-0");
+                    contactOpacity.classList.add("u-opacity-0");
 
                     let leftContent = document.getElementById("left-content-animation");
                     let rightTopContent = document.getElementById("right-top-content-animation");
-                    let rightBottomContent = document.getElementById("right-bottom-content-animation");
+                    let rightBottomContent = document.getElementById("right-bottom-content-animation");                
 
                     leftContent.classList.remove('u-move-in-left-animation');
                     rightTopContent.classList.remove('u-move-in-right-animation');
                     rightBottomContent.classList.remove('u-move-in-bottom-animation');
+                    projectsOpacity.classList.remove('u-move-in-bottom-animation');
+                    contactOpacity.classList.remove('u-move-in-bottom-animation');
 
                     runAnimation = [true, true, true];
                 }
