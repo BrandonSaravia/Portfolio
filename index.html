@@ -231,7 +231,7 @@
             </div>
         </section>
 
-        <section class="section-contact" id="contact">
+        <section class="section-contact">
             <div class="u-center-text u-margin-bottom-medium-large">
                 <h2 class="heading-secondary heading-secondary--white u-margin-bottom-medium-small u-margin-top-x-large" id="contact">
                     Contact Me
@@ -276,7 +276,7 @@
     </main>
 
 
-    <footer class="footer">
+    <footer class="footer"  id="contact">
         <div class="footer__copyright">
             <span class="footer__copyright-name">Brandon Saravia</span> <span class="footer__copyright-logo">&copy;2020</span>
         </div>
@@ -334,97 +334,65 @@
     <!-- Scroll Animations -->
     <script>
 
-        let used = false;
-        let aboutSectionSeen = false;
+        // boolean variables for animations
+        let runAnimation = [true, true, true]
 
-        // scroll to section of page
+        // variables for location 
+        let currentLocation = "none"
+
+
+        // get navbar and it's distance from the top
+        const navbar = document.getElementById("navbar");
+        const sticky = navbar.offsetTop;
+
+
+        // get links on navbar
+        const headLink = document.getElementById("header-link");
+        const aboutLink = document.getElementById("about-link");
+        const projectsLink = document.getElementById("projects-link");
+        const contactLink = document.getElementById("contact-link");
+        
+
+        // get sections of html document
+        const headerSection = document.querySelector(".header");
+        const aboutSection = document.querySelector(".section-about");
+        const projectsSection = document.querySelector(".section-projects");
+        const contactSection = document.querySelector(".section-contact");
+
+
+        // function that gets element distance from top of web page
+        let position = window.pageYOffset;
+
+        function getPageDistance(elem) {
+            let location = 0;
+            if (elem.offsetParent) {
+                do {
+                    location += elem.offsetTop;
+                    elem = elem.offsetParent;
+                } while (elem);
+            }
+            return location;
+        };
+
+
+        // get sections disctance from top of web page
+        let aboutSectionLocation = getPageDistance( aboutSection );
+        let projectsSectionLocation = getPageDistance( projectsSection );
+        let contactSectionLocation = getPageDistance( contactSection );
+
+
+        // function to scroll to desired section of page
         function scrollToID(id) {
             let section = document.getElementById(id);
-            if (section === "contact") {
-                section.scrollIntoView(false);
-            } else {
-                section.scrollIntoView(true);
-            }
+            section.scrollIntoView(true);
         }
 
-        let headerPassed = false;
-        let aboutPassed = false;
-        let projectsPassed = false;
-        let contactPassed = false;
 
-        var navbar = document.getElementById("navbar");
-        var sticky = navbar.offsetTop;
-
-        window.addEventListener("scroll", () => {
-
-            // make navbar sticky
-            if (window.pageYOffset >= sticky) {
-                navbar.classList.add("sticky");
-                console.log(navbar.classList);
-            }
-            if (window.pageYOffset < sticky){
-                navbar.classList.remove("sticky");
-                console.log(navbar.classList);
-            }
-
-            // know section user is focused on
-            const scrolled = window.scrollY;
-
-            var header = document.getElementById('header');
-            var headerToTop = header.getBoundingClientRect().top;
-
-            var about = document.getElementById('about');
-            var aboutToTop = about.getBoundingClientRect().top;
-
-            var projects = document.getElementById('projects');
-            var projectsToTop = projects.getBoundingClientRect().top;
-
-            var contact = document.getElementById('contact');
-            var contactToTop = contact.getBoundingClientRect().top;
-
-            if (headerToTop <= 0 && headerPassed === false) {
-                // make nav-bar emphisize header
-                var head = document.getElementById("header-link")
-                var about = document.getElementById("about-link")
-                var projects = document.getElementById("projects-link")
-                var contact = document.getElementById("contact-link")
-                if (head.classList.contains(""))
-
-                headerPassed = true;
-                console.log("header passed");
-            }
-            if (aboutToTop <= 0 && aboutPassed === false) {
-                // make nav-bar emphisize about
-                aboutPassed = true;
-                console.log("about passed");
-            }
-            if (projectsToTop <= 0 && projectsPassed === false) {
-                // make nav-bar emphisize projects
-                projectsPassed = true;
-                console.log("projects passed");
-            }
-            if (contactToTop <= 0 && contactPassed === false) {
-                // make nav-bar emphisize contact
-                contactPassed = true;
-                console.log("contact passed");
-            }
-            if (contactToTop > 0 && contactPassed === true) {
-                console.log('location projects');
-                contactPassed = false;
-            }
-            if (projectsToTop > 0 && projectsPassed === true) {
-                console.log('location about');
-                projectsPassed = false;
-            }
-            if (aboutToTop > 0 && aboutPassed === true) {
-                console.log('location header');
-                aboutPassed = false;
-            }
-
-            // about section animation
-            if (Math.ceil(scrolled) > window.innerHeight - .5 * window.innerHeight && aboutSectionSeen === false) {
+        // animation functions
+        function aboutAnimation() {
+            if (runAnimation[0] === true) {
                 let opacity = document.getElementById("remove-about-section-opacity");
-
+            
                 opacity.classList.remove("u-opacity-0");
 
                 let leftContent = document.getElementById("left-content-animation");
@@ -435,31 +403,118 @@
                 rightTopContent.classList.add('u-move-in-right-animation');
                 rightBottomContent.classList.add('u-move-in-bottom-animation');
 
-                aboutSectionSeen = true;
-                used = true;
+                runAnimation[0] = false
+            }
+        }
+
+        function projectsAnimation() {
+            if (runAnimation[1] === true) {
+
+                runAnimation[1] = false
+            }
+        }
+
+        function contactAnimation() {
+            if (runAnimation[2] === true) {
+
+                runAnimation[2] = false
+            }
+        }
+
+
+        // window scroll event
+        window.addEventListener("scroll", () => {
+
+            // make navbar sticky
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky");
+            }
+            if (window.pageYOffset < sticky){
+                navbar.classList.remove("sticky");
+            }
+
+            // know section user is focused on
+            const scrolled = window.scrollY + 1/2 * window.innerHeight;
+
+            if (scrolled > 0 && scrolled < aboutSectionLocation && currentLocation != "header") {
+                // emphisize header
+                headLink.classList.add("link-activated");
+
+                if (aboutLink.classList.contains("link-activated")) {
+                    aboutLink.classList.remove("link-activated");
+                }
+
+                currentLocation = "header";
+
+            } else if (scrolled >= aboutSectionLocation && scrolled < projectsSectionLocation && currentLocation != "about") {
+                // emphisize about
+                aboutLink.classList.add("link-activated");
+
+                if (headLink.classList.contains("link-activated")) {
+                    headLink.classList.remove("link-activated");
+                }
+
+                if (projectsLink.classList.contains("link-activated")) {
+                    projectsLink.classList.remove("link-activated");
+                }
+
+                aboutAnimation();
+
+                currentLocation = "about";
+
+            } else if (scrolled >= projectsSectionLocation && scrolled < contactSectionLocation && currentLocation != "projects") {
+                // emphisize projects
+                projectsLink.classList.add("link-activated");
+
+                if (aboutLink.classList.contains("link-activated")) {
+                    aboutLink.classList.remove("link-activated");
+                }
+
+                if (contactLink.classList.contains("link-activated")) {
+                    contactLink.classList.remove("link-activated");
+                }
+
+                currentLocation = "projects";
+
+            } else if (scrolled >= contactSectionLocation && currentLocation != "contact") {
+                // emphisize contact
+                contactLink.classList.add("link-activated");
+
+                if (projectsLink.classList.contains("link-activated")) {
+                    projectsLink.classList.remove("link-activated");
+                }
+
+                currentLocation = "contact"
             } 
 
 
             // reset animations
-            if (Math.ceil(scrolled) < window.innerHeight - .9 * window.innerHeight && used === true) {
-                let opacity = document.getElementById("remove-about-section-opacity");
+            if (scrolled === 1/2 * window.innerHeight) {
+                let runReset = false;
 
-                opacity.classList.add("u-opacity-0");
+                for (let i = 0; i < runAnimation.length; i++) {
+                    if (runAnimation[i] === false) {
+                        runReset = true;
+                    }
+                }
 
-                let leftContent = document.getElementById("left-content-animation");
-                let rightTopContent = document.getElementById("right-top-content-animation");
-                let rightBottomContent = document.getElementById("right-bottom-content-animation");
+                if (runReset === true) {
+                    let opacity = document.getElementById("remove-about-section-opacity");
 
-                leftContent.classList.remove('u-move-in-left-animation');
-                rightTopContent.classList.remove('u-move-in-right-animation');
-                rightBottomContent.classList.remove('u-move-in-bottom-animation');
+                    opacity.classList.add("u-opacity-0");
 
-                aboutSectionSeen = false;
-                used = false;
+                    let leftContent = document.getElementById("left-content-animation");
+                    let rightTopContent = document.getElementById("right-top-content-animation");
+                    let rightBottomContent = document.getElementById("right-bottom-content-animation");
+
+                    leftContent.classList.remove('u-move-in-left-animation');
+                    rightTopContent.classList.remove('u-move-in-right-animation');
+                    rightBottomContent.classList.remove('u-move-in-bottom-animation');
+
+                    runAnimation = [true, true, true];
+                }
             }
-
-        });
-        
+        });        
     </script>
 
 </body>
