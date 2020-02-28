@@ -67,3 +67,17 @@
         color: white;
     }
 }
+
+.text-logo {
+    background-color: $color-black;
+    color: $color-white;
+    font-size: 6.2rem;
+    width: 10rem;
+    padding-top: 2rem;
+    text-align: center;
+    height: 10rem;
+
+    &:not(:first-child) {
+        margin-left: 1rem;
+    }
+}

@@ -104,7 +104,14 @@
 
     }
 
-    
+    &--site-link {
+        width: 15rem;
+        padding: 2rem 0;
+        font-size: 2rem;
+        text-align: center;
+        color: $color-white;
+        background-color: $color-black;
+    }
 
 
 }

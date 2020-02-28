@@ -190,16 +190,18 @@
 
             <div class="row u-opacity-0" id='remove-projects-section-opacity'>
                 <div class="col-1-of-3">
-                    <div class="card">
-                        <div class="card__picture card__picture--1">
-                            &nbsp;
+                    <a href="#popup">
+                        <div class="card">
+                            <div class="card__picture card__picture--1">
+                                &nbsp;
+                            </div>
+                            <h4 class="card__heading">
+                                <span class="card__heading-span">
+                                    MacBuilt Roofing
+                                </span>
+                            </h4>
                         </div>
-                        <h4 class="card__heading">
-                            <span class="card__heading-span">
-                                MacBuilt Roofing
-                            </span>
-                        </h4>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="col-1-of-3">
@@ -280,6 +282,43 @@
             <span class="footer__copyright-name">Brandon Saravia</span> <span class="footer__copyright-logo">&copy;2020</span>
         </div>
     </footer>
+
+
+    <div class="popup" id="popup">
+        <div class="popup__container">
+            <div class="popup__left">
+                <img src="./img/macbuilt.jpg" alt="Macbuit Website" class="popup__left-image">
+            </div>
+            <div class="popup__right">
+                <a href="#close" class="popup__close">&times;</a>
+                
+                <h2 class="heading-secondary u-margin-top-large u-margin-bottom-small u-margin-0-auto">MacBuilt Roofing</h2>
+                <div class="popup__card u-margin-top-small">
+                    <p class="paragraph"><a class="u-normalize-anchor-tag" href="macbuiltroofing.com">Macbuiltroofing.com</a> is a landing page I was contracted to build for a comercial roofing company.</p>
+                </div>
+                
+                <h3 class="heading-tertiary u-margin-left-small u-margin-top-medium u-margin-bottom-small">Stack:</h3>
+                <div class="popup__card popup__card--flex-box">
+                    <i class="fab fa-js composition__javascript-logo text-logo"></i>
+                    <i class="fab fa-html5 composition__html5-logo text-logo"></i>
+                    <i class="fab fa-css3-alt composition__css3-logo text-logo"></i>
+                    <i class="fab fa-sass composition__sass-logo text-logo"></i>
+                </div>
+                
+                <div class="popup__quick-links">
+                    <div class="popup__quick-links--first-row">
+                        <a class="btn btn--site-link">visit website</a>
+                        <a class="btn btn--site-link">view code</a>
+                    </div>
+                    <div class="popup__quick-links--second-row">
+                        <a href="https://github.com/BrandonSaravia"><i class="fab fa-github-square navbar__link--logo"></i></a>
+                        <a href="https://www.linkedin.com/in/brandon-saravia-24b59b182/"><i class="fab fa-linkedin  navbar__link--logo"></i></a>
+                        <a class="btn btn--contact">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- About Section onmouseover skills highlighter -->
     <script>
@@ -531,7 +570,7 @@
                 }
             }
         });        
-        
+
     </script>
 
 </body>
