@@ -28,6 +28,14 @@
   100% {
     opacity: 1; } }
 
+@keyframes scaleUp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.75); }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); } }
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
     v2.0 | 20110126
     License: none (public domain)
@@ -196,6 +204,12 @@ canvas {
 .u-margin-left-small {
   margin-left: 5%; }
 
+.u-margin-right-small {
+  margin-right: 1rem; }
+
+.u-margin-right-medium {
+  margin-right: 2rem; }
+
 .u-move-in-left-animation {
   animation: moveInLeft 1s ease-out; }
 
@@ -208,6 +222,9 @@ canvas {
 .u-move-in-bottom-animation {
   animation: moveInBottom 1s ease-out; }
 
+.u-scale-up-animation {
+  animation: scaleUp 1s ease; }
+
 .u-opacity-0 {
   opacity: 0; }
 
@@ -219,6 +236,9 @@ canvas {
   color: #000; }
   .u-normalize-anchor-tag:hover {
     color: #a67b7d; }
+
+.u-visibility-hidden {
+  visibility: hidden; }
 
 .bg-video {
   position: absolute;
@@ -305,17 +325,40 @@ canvas {
   transition: transform .4s ease;
   transform: rotate(90deg); }
 
-.btn--site-link {
-  width: 15rem;
-  padding: 2rem 0;
+.btn--site-link, .btn--site-link:link, .btn--site-link:visited {
+  width: 20rem;
+  height: 6.25rem;
+  padding-top: 2rem;
   font-size: 2rem;
   text-align: center;
+  border-radius: 7px;
+  transition: all .2s ease;
   color: #fff;
-  background-color: #000; }
+  background-color: #000;
+  border: 1px solid #a67b7d; }
+
+.btn--site-link:hover {
+  color: #a67b7d;
+  background-color: #fff;
+  border: 1px solid #a67b7d;
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.btn--site-link:active, .btn--site-link:focus {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.btn--logo-link, .btn--logo-link:link, .btn--logo-link:visited {
+  font-size: 6.8rem;
+  color: #000;
+  transition: all .2s ease; }
+
+.btn--logo-link:hover {
+  color: #a67b7d; }
 
 .card {
   height: 52rem;
-  transition: all .3s ease;
+  transition: all .2s ease;
   width: 100%;
   backface-visibility: hidden;
   border-radius: 3px;
@@ -330,7 +373,7 @@ canvas {
     transform: translateY(-0.1rem) scale(1.09);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
   .card__picture {
-    background-size: cover;
+    background-size: contain;
     height: 40rem;
     background-blend-mode: screen;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
@@ -338,11 +381,11 @@ canvas {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px; }
     .card__picture--1 {
-      background-image: url("https://via.placeholder.com/200x200.jpg?text=MacBuilt"); }
+      background-image: url("../img/macbuilt.jpg"); }
     .card__picture--2 {
-      background-image: url("https://via.placeholder.com/200x200.jpg?text=Spotify+Mock"); }
+      background-image: url("../img/macbuilt.jpg"); }
     .card__picture--3 {
-      background-image: url("https://via.placeholder.com/200x200.jpg?text=Rent+Me"); }
+      background-image: url("../img/macbuilt.jpg"); }
   .card__heading {
     font-size: 2.4rem;
     font-weight: 300;
@@ -529,17 +572,17 @@ select:-webkit-autofill:focus {
     background-color: #fff;
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
     border-radius: 3px;
-    transform: translate(-50%, -50%);
-    transition: all .5s .2s;
+    transition: all .1s;
     display: flex; }
   .popup__left {
-    padding: 1rem; }
+    width: 55%; }
     .popup__left-image {
-      height: 800px; }
+      padding: 1rem;
+      width: 100%; }
   .popup__right {
     display: flex;
     flex-flow: column;
-    width: 100%; }
+    width: 45%; }
   .popup__close:link, .popup__close:visited {
     color: #777;
     position: absolute;
@@ -561,13 +604,22 @@ select:-webkit-autofill:focus {
     .popup__card--flex-box {
       display: flex; }
   .popup__quick-links {
-    margin: 10rem 0 0 5%;
+    margin: 5rem 0;
     display: flex;
     flex-flow: wrap; }
     .popup__quick-links--first-row {
-      width: 100%; }
+      width: 100%;
+      display: flex;
+      justify-content: center; }
     .popup__quick-links--second-row {
-      width: 100%; }
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem; }
+      .popup__quick-links--second-row-left {
+        width: 20rem;
+        display: flex;
+        justify-content: space-evenly; }
 
 .footer {
   background-color: #2b2b2b;

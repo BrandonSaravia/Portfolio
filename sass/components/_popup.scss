@@ -13,23 +13,23 @@
         background-color: $color-white;
         box-shadow: 0 2rem 4rem rgba($color-black, .2);
         border-radius: 3px;
-        transform: translate(-50%, -50%);
-        transition: all .5s .2s;
+        transition: all .1s;
         display: flex;
     }
 
     &__left {
-        padding: 1rem;
+        width: 55%;
 
         &-image {
-            height: 800px;
+            padding: 1rem;
+            width: 100%;
         }
     }
 
     &__right {
         display: flex;
         flex-flow: column;
-        width: 100%;
+        width: 45%;
     }
 
     &__close {
@@ -47,7 +47,7 @@
         }
 
         &:hover {
-            color: $color-primary;
+            color: $color-primary;            
         }
     }
 
@@ -64,15 +64,27 @@
     }
 
     &__quick-links {
-        margin: 10rem 0 0 5%;
+        margin: 5rem 0;
         display: flex;
         flex-flow: wrap;
 
         &--first-row {
             width: 100%;
+            display: flex;
+            justify-content: center;
         }
         &--second-row {
             width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+
+            &-left {
+                width: 20rem;
+                display: flex;
+                justify-content: space-evenly;
+            }
         }
+
     }
 }

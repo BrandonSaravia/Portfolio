@@ -14,10 +14,14 @@
 
 .u-margin-left-small { margin-left: 5%; }
 
+.u-margin-right-small { margin-right: 1rem; }
+.u-margin-right-medium { margin-right: 2rem; }
+
 .u-move-in-left-animation { animation: moveInLeft 1s ease-out; }
 .u-move-in-right-animation { animation: moveInRight 1s ease-out; }
 .u-move-in-place-animation { animation: moveInPlace 2s ease-out; }
 .u-move-in-bottom-animation { animation: moveInBottom 1s ease-out; }
+.u-scale-up-animation { animation: scaleUp 1s ease;}
 
 .u-opacity-0 { opacity: 0; }
 .u-margin-0-auto { margin: 0 auto; }
@@ -29,4 +33,6 @@
         color: $color-primary;
     }
 }
+
+.u-visibility-hidden { visibility: hidden; }
 
