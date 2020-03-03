@@ -109,26 +109,29 @@
         window.addEventListener('mousemove', onMouseMove)
 
     </script>
-    
+
     <main class="main" id="about">
 
         <div class="navbar" id="navbar">
             <ul class="navbar__container navbar__container--1">
-                <li class="navbar__link" id='header-link'><a onclick="scrollToID('header')" >Home</a></li>
+                <li class="navbar__link" id='header-link'><a onclick="scrollToID('header')">Home</a></li>
                 <li class="navbar__link" id='about-link'><a onclick="scrollToID('about')">About</a></li>
                 <li class="navbar__link" id='projects-link'><a onclick="scrollToID('projects')">Projects</a></li>
                 <li class="navbar__link" id='contact-link'><a onclick="scrollToID('contact')">Contact</a></li>
             </ul>
 
             <ul class="navbar__container navbar__container--2">
-                <li class="navbar__link"><a href="https://github.com/BrandonSaravia"><i class="fab fa-github-square navbar__link--logo"></i></a></li>
-                <li class="navbar__link"><a href="https://www.linkedin.com/in/brandon-saravia-24b59b182/"><i class="fab fa-linkedin  navbar__link--logo"></i></a></li>
-                <li class="navbar__link"><a class="btn navbar__link--btn" onclick="scrollToID('contact')">Contact Me</a></li>
+                <li class="navbar__link"><a href="https://github.com/BrandonSaravia"><i
+                            class="fab fa-github-square navbar__link--logo"></i></a></li>
+                <li class="navbar__link"><a href="https://www.linkedin.com/in/brandon-saravia-24b59b182/"><i
+                            class="fab fa-linkedin  navbar__link--logo"></i></a></li>
+                <li class="navbar__link"><a class="btn navbar__link--btn" onclick="scrollToID('contact')">Contact Me</a>
+                </li>
             </ul>
         </div>
 
 
-        <section class="section-about" >
+        <section class="section-about">
             <div class="u-center-text u-margin-bottom-large">
                 <h2 class="heading-secondary u-margin-bottom-medium-small" id="header-animation">
                     About Me
@@ -138,36 +141,81 @@
                 <div class="col-1-of-2" id="left-content-animation">
                     <h3 class="heading-tertiary u-margin-bottom-small">Who am I?</h3>
                     <p class="paragraph">
-                        I'm a <span class="paragraph--emphisis">Full Stack Web Developer</span> located in <span class="paragraph--emphisis">Greenville, South Carolina</span>.
+                        I'm a <span class="paragraph--emphisis">Full Stack Web Developer</span> located in <span
+                            class="paragraph--emphisis">Greenville, South Carolina</span>.
                         My main goal is to build web applications to be straightforward and enjoyable for best user
                         experience.
                     </p>
 
                     <h3 class="heading-tertiary u-margin-bottom-small">What are my Front End skills?</h3>
                     <ul class="list">
-                        <li class="list__row"><span class="list__key" onmouseover="highlight([['item', 'javascript', '#F0DB4F'], ['item', 'html5', '#F16529'], ['item', 'css3', '#2965f1'], ['logo', 'javascript-logo', '#F0DB4F'], ['logo', 'html5-logo', '#F16529'], ['logo', 'css3-logo', '#2965f1']])"  onmouseout="removeHighlight([['item', 'javascript'], ['item', 'html5'], ['item', 'css3'], ['logo', 'javascript-logo'], ['logo', 'html5-logo'], ['logo', 'css3-logo']])">Languages:</span> <span class="list__javascript list__item">Javascript</span> / <span class="list__html5 list__item">Html5</span> / <span class="list__css3 list__item">Css3</span></li>
-                        <li class="list__row"><span class="list__key" onmouseover="highlight([['item', 'react', '#61dbfb'], ['item', 'react-redux', '#61dbfb'], ['item', 'react-hooks', '#61dbfb'], ['logo', 'react-logo', '#61dbfb']])"  onmouseout="removeHighlight([['item', 'react'], ['item', 'react-redux'], ['item', 'react-hooks'], ['logo', 'react-logo']])">Libraries:</span> <span class="list__react list__item">React</span> / <span class="list__react-redux list__item">React-Redux</span> / <span class="list__react-hooks list__item">React-Hooks</span></li>
-                        <li class="list__row"><span class="list__key" onmouseover="highlight([['item', 'sass', '#c69'], ['item' ,'less', 'rgb(111, 111, 194)'], ['logo', 'sass-logo', '#c69'], ['logo', 'less-logo', 'rgb(111, 111, 194)']])"  onmouseout="removeHighlight([['item', 'sass'], ['item', 'less'], ['logo', 'sass-logo'], ['logo', 'less-logo']])">CSS Preprocessors:</span> <span class="list__sass list__item">Sass</span> / <span class="list__less list__item">Less</span></li>
+                        <li class="list__row"><span class="list__key"
+                                onmouseover="highlight([['item', 'javascript', '#F0DB4F'], ['item', 'html5', '#F16529'], ['item', 'css3', '#2965f1'], ['logo', 'javascript-logo', '#F0DB4F'], ['logo', 'html5-logo', '#F16529'], ['logo', 'css3-logo', '#2965f1']])"
+                                onmouseout="removeHighlight([['item', 'javascript'], ['item', 'html5'], ['item', 'css3'], ['logo', 'javascript-logo'], ['logo', 'html5-logo'], ['logo', 'css3-logo']])">Languages:</span>
+                            <span class="list__javascript list__item">Javascript</span> / <span
+                                class="list__html5 list__item">Html5</span> / <span
+                                class="list__css3 list__item">Css3</span></li>
+                        <li class="list__row"><span class="list__key"
+                                onmouseover="highlight([['item', 'react', '#61dbfb'], ['item', 'react-redux', '#61dbfb'], ['item', 'react-hooks', '#61dbfb'], ['logo', 'react-logo', '#61dbfb']])"
+                                onmouseout="removeHighlight([['item', 'react'], ['item', 'react-redux'], ['item', 'react-hooks'], ['logo', 'react-logo']])">Libraries:</span>
+                            <span class="list__react list__item">React</span> / <span
+                                class="list__react-redux list__item">React-Redux</span> / <span
+                                class="list__react-hooks list__item">React-Hooks</span></li>
+                        <li class="list__row"><span class="list__key"
+                                onmouseover="highlight([['item', 'sass', '#c69'], ['item' ,'less', 'rgb(111, 111, 194)'], ['logo', 'sass-logo', '#c69'], ['logo', 'less-logo', 'rgb(111, 111, 194)']])"
+                                onmouseout="removeHighlight([['item', 'sass'], ['item', 'less'], ['logo', 'sass-logo'], ['logo', 'less-logo']])">CSS
+                                Preprocessors:</span> <span class="list__sass list__item">Sass</span> / <span
+                                class="list__less list__item">Less</span></li>
                     </ul>
-                    
+
                     <h3 class="heading-tertiary u-margin-bottom-small">What are my Back End skills?</h3>
                     <ul class="list">
-                        <li class="list__row"><span class="list__key" onmouseover="highlight([['item', 'java', 'orange'], ['item', 'python', '#4B8BBE'], ['logo', 'java-logo', 'orange'], ['logo', 'python-logo', '#4B8BBE']])"  onmouseout="removeHighlight([['item', 'java'], ['item', 'python'], ['logo', 'python-logo'], ['logo', 'java-logo']])">Languages:</span> <span class="list__java list__item">Java</span> / <span class="list__python list__item">Python</span></li>
-                        <li class="list__row"><span class="list__key" onmouseover="highlight([['item', 'spring-boot', 'orange'], ['item', 'django', '#4B8BBE'], ['logo', 'java-logo', 'orange'], ['logo', 'python-logo', '#4B8BBE']])"  onmouseout="removeHighlight([['item', 'spring-boot'], ['item', 'django'], ['logo', 'python-logo'], ['logo', 'java-logo']])">Frameworks:</span> <span class="list__spring-boot list__item">Spring Boot</span> / <span class="list__django list__item">Django</span></li>
-                        <li class="list__row"><span class="list__key" onmouseover="highlight([['item', 'postgressql', 'lightgreen'], ['item', 'mysql', 'lightgreen'], ['item', 'sqlite', 'lightgreen']])"  onmouseout="removeHighlight([['item', 'postgressql'], ['item', 'mysql'], ['item', 'sqlite']])">Databases:</span> <span class="list__postgressql list__item">PostgresSQL</span> / <span class="list__mysql list__item">MySQL</span> / <span class="list__sqlite list__item">SQLite</span></li>
+                        <li class="list__row"><span class="list__key"
+                                onmouseover="highlight([['item', 'java', 'orange'], ['item', 'python', '#4B8BBE'], ['logo', 'java-logo', 'orange'], ['logo', 'python-logo', '#4B8BBE']])"
+                                onmouseout="removeHighlight([['item', 'java'], ['item', 'python'], ['logo', 'python-logo'], ['logo', 'java-logo']])">Languages:</span>
+                            <span class="list__java list__item">Java</span> / <span
+                                class="list__python list__item">Python</span></li>
+                        <li class="list__row"><span class="list__key"
+                                onmouseover="highlight([['item', 'spring-boot', 'orange'], ['item', 'django', '#4B8BBE'], ['logo', 'java-logo', 'orange'], ['logo', 'python-logo', '#4B8BBE']])"
+                                onmouseout="removeHighlight([['item', 'spring-boot'], ['item', 'django'], ['logo', 'python-logo'], ['logo', 'java-logo']])">Frameworks:</span>
+                            <span class="list__spring-boot list__item">Spring Boot</span> / <span
+                                class="list__django list__item">Django</span></li>
+                        <li class="list__row"><span class="list__key"
+                                onmouseover="highlight([['item', 'postgressql', 'lightgreen'], ['item', 'mysql', 'lightgreen'], ['item', 'sqlite', 'lightgreen']])"
+                                onmouseout="removeHighlight([['item', 'postgressql'], ['item', 'mysql'], ['item', 'sqlite']])">Databases:</span>
+                            <span class="list__postgressql list__item">PostgresSQL</span> / <span
+                                class="list__mysql list__item">MySQL</span> / <span
+                                class="list__sqlite list__item">SQLite</span></li>
                     </ul>
                 </div>
                 <div class="col-1-of-2">
-                    <img src="https://via.placeholder.com/465x200.jpg?text=My+Photo+placehoalder" alt="photo of Brandon Saravia" class="section-about__my-photo" id="right-top-content-animation">
+                    <img src="https://via.placeholder.com/465x200.jpg?text=My+Photo+placehoalder"
+                        alt="photo of Brandon Saravia" class="section-about__my-photo" id="right-top-content-animation">
                     <div class="composition" id="right-bottom-content-animation">
-                        <i class="fab fa-js composition__javascript-logo" onmouseover="highlight([['item', 'javascript', '#F0DB4F'], ['logo', 'javascript-logo', '#F0DB4F']])" onmouseout="removeHighlight([['item', 'javascript'], ['logo', 'javascript-logo']])"></i>
-                        <i class="fab fa-html5 composition__html5-logo" onmouseover="highlight([['item', 'html5', '#F16529'], ['logo', 'html5-logo', '#F16529']])" onmouseout="removeHighlight([['item', 'html5'], ['logo', 'html5-logo']])"></i>
-                        <i class="fab fa-css3-alt composition__css3-logo" onmouseover="highlight([['item', 'css3', '#2965f1'], ['logo', 'css3-logo', '#2965f1']])" onmouseout="removeHighlight([['item', 'css3'], ['logo', 'css3-logo']])"></i>
-                        <i class="fab fa-react composition__react-logo" onmouseover="highlight([['item', 'react', '#61dbfb'], ['item', 'react-redux', '#61dbfb'], ['item', 'react-hooks', '#61dbfb'], ['logo', 'react-logo', '#61dbfb']])" onmouseout="removeHighlight([['item', 'react'], ['item', 'react-redux'], ['item', 'react-hooks'], ['logo', 'react-logo']])"></i>></i>
-                        <i class="fab fa-sass composition__sass-logo" onmouseover="highlight([['item', 'sass', '#c69'], ['logo', 'sass-logo', '#c69']])" onmouseout="removeHighlight([['item', 'sass'], ['logo', 'sass-logo']])"></i>
-                        <i class="fab fa-less composition__less-logo" onmouseover="highlight([['item', 'less', 'rgb(111, 111, 194)'], ['logo', 'less-logo', 'rgb(111, 111, 194)']])" onmouseout="removeHighlight([['item', 'less'], ['logo', 'less-logo']])"></i>
-                        <i class="fab fa-java composition__java-logo" onmouseover="highlight([['item', 'java', 'orange'], ['item', 'spring-boot', 'orange'], ['logo', 'java-logo', 'orange']])" onmouseout="removeHighlight([['item', 'java'], ['item', 'spring-boot'], ['logo', 'java-logo']])"></i>
-                        <i class="fab fa-python composition__python-logo" onmouseover="highlight([['item', 'python', '#4B8BBE'], ['item', 'django', '#4B8BBE'], ['logo', 'python-logo', '#4B8BBE']])" onmouseout="removeHighlight([['item', 'python'], ['item', 'django'], ['logo', 'python-logo']])"></i>
+                        <i class="fab fa-js composition__javascript-logo"
+                            onmouseover="highlight([['item', 'javascript', '#F0DB4F'], ['logo', 'javascript-logo', '#F0DB4F']])"
+                            onmouseout="removeHighlight([['item', 'javascript'], ['logo', 'javascript-logo']])"></i>
+                        <i class="fab fa-html5 composition__html5-logo"
+                            onmouseover="highlight([['item', 'html5', '#F16529'], ['logo', 'html5-logo', '#F16529']])"
+                            onmouseout="removeHighlight([['item', 'html5'], ['logo', 'html5-logo']])"></i>
+                        <i class="fab fa-css3-alt composition__css3-logo"
+                            onmouseover="highlight([['item', 'css3', '#2965f1'], ['logo', 'css3-logo', '#2965f1']])"
+                            onmouseout="removeHighlight([['item', 'css3'], ['logo', 'css3-logo']])"></i>
+                        <i class="fab fa-react composition__react-logo"
+                            onmouseover="highlight([['item', 'react', '#61dbfb'], ['item', 'react-redux', '#61dbfb'], ['item', 'react-hooks', '#61dbfb'], ['logo', 'react-logo', '#61dbfb']])"
+                            onmouseout="removeHighlight([['item', 'react'], ['item', 'react-redux'], ['item', 'react-hooks'], ['logo', 'react-logo']])"></i>></i>
+                        <i class="fab fa-sass composition__sass-logo"
+                            onmouseover="highlight([['item', 'sass', '#c69'], ['logo', 'sass-logo', '#c69']])"
+                            onmouseout="removeHighlight([['item', 'sass'], ['logo', 'sass-logo']])"></i>
+                        <i class="fab fa-less composition__less-logo"
+                            onmouseover="highlight([['item', 'less', 'rgb(111, 111, 194)'], ['logo', 'less-logo', 'rgb(111, 111, 194)']])"
+                            onmouseout="removeHighlight([['item', 'less'], ['logo', 'less-logo']])"></i>
+                        <i class="fab fa-java composition__java-logo"
+                            onmouseover="highlight([['item', 'java', 'orange'], ['item', 'spring-boot', 'orange'], ['logo', 'java-logo', 'orange']])"
+                            onmouseout="removeHighlight([['item', 'java'], ['item', 'spring-boot'], ['logo', 'java-logo']])"></i>
+                        <i class="fab fa-python composition__python-logo"
+                            onmouseover="highlight([['item', 'python', '#4B8BBE'], ['item', 'django', '#4B8BBE'], ['logo', 'python-logo', '#4B8BBE']])"
+                            onmouseout="removeHighlight([['item', 'python'], ['item', 'django'], ['logo', 'python-logo']])"></i>
                     </div>
                 </div>
             </div>
@@ -190,84 +238,73 @@
 
             <div class="row u-opacity-0" id='remove-projects-section-opacity'>
                 <div class="col-1-of-3">
-                    <div class="card">
-                        <div class="card__picture card__picture--1">
-                            &nbsp;
+                    <a onclick="openPopup('MacBuilt')">
+                        <div class="card">
+                            <div class="card__picture card__picture--1">
+                                &nbsp;
+                            </div>
+                            <h4 class="card__heading">
+                                <span class="card__heading-span">
+                                    MacBuilt Roofing
+                                </span>
+                            </h4>
                         </div>
-                        <h4 class="card__heading">
-                            <span class="card__heading-span">
-                                MacBuilt Roofing
-                            </span>
-                        </h4>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="col-1-of-3">
-                    <div class="card">
-                        <div class="card__picture card__picture--2">
-                            &nbsp;
+                    <a onclick="openPopup('SpotifyMock')">
+                        <div class="card">
+                            <div class="card__picture card__picture--2">
+                                &nbsp;
+                            </div>
+                            <h4 class="card__heading">
+                                <span class="card__heading-span">
+                                    Spotify Mock
+                                </span>
+                            </h4>
                         </div>
-                        <h4 class="card__heading">
-                            <span class="card__heading-span">
-                                Spotify Mock
-                            </span>
-                        </h4>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="col-1-of-3">
-                    <div class="card">
-                        <div class="card__picture card__picture--3">
-                            &nbsp;
+                    <a onclick="openPopup('RentMe')">
+                        <div class="card">
+                            <div class="card__picture card__picture--3">
+                                &nbsp;
+                            </div>
+                            <h4 class="card__heading">
+                                <span class="card__heading-span">
+                                    Rent Me
+                                </span>
+                            </h4>
                         </div>
-                        <h4 class="card__heading">
-                            <span class="card__heading-span">
-                                Rent Me
-                            </span>
-                        </h4>
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
 
         <section class="section-contact">
             <div class="u-center-text u-margin-bottom-medium-large">
-                <h2 class="heading-secondary heading-secondary--white u-margin-bottom-medium-small u-margin-top-x-large" id="contact">
+                <h2 class="heading-secondary heading-secondary--white u-margin-bottom-medium-small u-margin-top-x-large"
+                    id="contact">
                     Contact Me
                 </h2>
             </div>
 
-            <form class="form u-center-text u-opacity-0" id="remove-contact-section-opacity" method="POST" data-netlify="true" data-netlify-recaptcha="true" action=''>
+            <form class="form u-center-text u-opacity-0" id="remove-contact-section-opacity" method="POST"
+                data-netlify="true" data-netlify-recaptcha="true" action=''>
                 <div class="form__container">
                     <label for="name" class="form__label">Name</label>
-                    <input 
-                        class="form__input form__input--name"
-                        type="text"
-                        name="name"
-                        placeholder="Name"
-                        required
-                    />
+                    <input class="form__input form__input--name" type="text" name="name" placeholder="Name" required />
                     <label for="email" class="form__label">Email</label>
-                    <input 
-                        class="form__input form__input--email"
-                        type="email"
-                        name="email"
-                        placeholder="Email"
-                        required
-                    />                    
+                    <input class="form__input form__input--email" type="email" name="email" placeholder="Email"
+                        required />
                     <label for="email" class="form__label">Message</label>
-                    <textarea 
-                        class="form__input form__input--message"
-                        name="message"
-                        placeholder="Message"
-                        rows="7"
-                        required
-                    ></textarea>
+                    <textarea class="form__input form__input--message" name="message" placeholder="Message" rows="7"
+                        required></textarea>
                     <div class="form__recaptcha" data-netlify-recaptcha="true"></div>
-                    <button
-                        class="btn form__btn"
-                        type="submit"
-                    >Submit</button>
+                    <button class="btn form__btn" type="submit">Submit</button>
 
                 </div>
             </form>
@@ -275,11 +312,156 @@
     </main>
 
 
-    <footer class="footer"  id="contact">
+    <footer class="footer" id="contact">
         <div class="footer__copyright">
-            <span class="footer__copyright-name">Brandon Saravia</span> <span class="footer__copyright-logo">&copy;2020</span>
+            <span class="footer__copyright-name">Brandon Saravia</span> <span
+                class="footer__copyright-logo">&copy;2020</span>
         </div>
     </footer>
+
+
+
+    <div class="popup u-opacity-0 u-visibility-hidden" id="popupMacBuilt" onclick="checkClickLocation('MacBuilt')">
+        <div class="popup__container" id="popupMacBuiltContainer">
+            <div class="popup__left">
+                <img src="./img/macbuilt.jpg" alt="Macbuit Website" class="popup__left-image">
+            </div>
+            <div class="popup__right">
+                <a onclick="closePopup('MacBuilt')" href="javascript:void(0);" class="popup__close">&times;</a>
+
+                <h2 class="heading-secondary u-margin-top-large u-margin-bottom-small u-margin-0-auto">MacBuilt Roofing
+                </h2>
+                <div class="popup__card u-margin-top-small">
+                    <p class="paragraph"><a class="u-normalize-anchor-tag"
+                            href="macbuiltroofing.com">Macbuiltroofing.com</a> is a landing page I was contracted to
+                        build for a comercial roofing company.</p>
+                </div>
+
+                <h3 class="heading-tertiary u-margin-left-small u-margin-top-medium u-margin-bottom-small">Stack:</h3>
+                <div class="popup__card popup__card--flex-box">
+                    <i class="fab fa-js composition__javascript-logo text-logo"></i>
+                    <i class="fab fa-html5 composition__html5-logo text-logo"></i>
+                    <i class="fab fa-css3-alt composition__css3-logo text-logo"></i>
+                    <i class="fab fa-sass composition__sass-logo text-logo"></i>
+                </div>
+
+                <div class="popup__quick-links">
+                    <div class="popup__quick-links--first-row">
+                        <a class="btn btn--site-link u-margin-right-medium">visit website</a>
+                        <a class="btn btn--site-link">view code</a>
+                    </div>
+                    <div class="popup__quick-links--second-row">
+                        <div class="popup__quick-links--second-row-right">
+                            <a class="btn btn--site-link u-margin-right-medium">Contact Me</a>
+                        </div>
+                        <div class="popup__quick-links--second-row-left">
+                            <a class="btn btn--logo-link" href="https://github.com/BrandonSaravia"><i
+                                    class="fab fa-github-square"></i></a>
+                            <a class="btn btn--logo-link"
+                                href="https://www.linkedin.com/in/brandon-saravia-24b59b182/"><i
+                                    class="fab fa-linkedin"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="popup u-opacity-0 u-visibility-hidden" id="popupSpotifyMock" onclick="checkClickLocation('SpotifyMock')">
+        <div class="popup__container" id="popupSpotifyMockContainer">
+            <div class="popup__left">
+                <img src="./img/macbuilt.jpg" alt="Macbuit Website" class="popup__left-image">
+            </div>
+            <div class="popup__right">
+                <a onclick="closePopup('SpotifyMock')" href="javascript:void(0);" class="popup__close">&times;</a>
+
+                <h2 class="heading-secondary u-margin-top-large u-margin-bottom-small u-margin-0-auto">Spotify Mock</h2>
+                <div class="popup__card u-margin-top-small">
+                    <p class="paragraph"><a class="u-normalize-anchor-tag" href="macbuiltroofing.com">Spotifymock.com</a> is a mock application of spotify built using
+                        the spotify api. 
+                    </p>
+                </div>
+
+                <h3 class="heading-tertiary u-margin-left-small u-margin-top-medium u-margin-bottom-small">Stack:</h3>
+                <div class="popup__card popup__card--flex-box">
+                    <i class="fab fa-react composition__react-logo text-logo"></i>
+                    <i class="fab fa-sass composition__sass-logo text-logo"></i>
+                </div>
+
+                <div class="popup__quick-links">
+                    <div class="popup__quick-links--first-row">
+                        <a class="btn btn--site-link u-margin-right-medium">visit website</a>
+                        <a class="btn btn--site-link">view code</a>
+                    </div>
+                    <div class="popup__quick-links--second-row">
+                        <div class="popup__quick-links--second-row-right">
+                            <a class="btn btn--site-link u-margin-right-medium">Contact Me</a>
+                        </div>
+                        <div class="popup__quick-links--second-row-left">
+                            <a class="btn btn--logo-link" href="https://github.com/BrandonSaravia"><i
+                                    class="fab fa-github-square"></i></a>
+                            <a class="btn btn--logo-link"
+                                href="https://www.linkedin.com/in/brandon-saravia-24b59b182/"><i
+                                    class="fab fa-linkedin"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="popup u-opacity-0 u-visibility-hidden" id="popupRentMe" onclick="checkClickLocation('RentMe')">
+        <div class="popup__container" id="popupRentMeContainer">
+            <div class="popup__left">
+                <img src="./img/macbuilt.jpg" alt="Macbuit Website" class="popup__left-image">
+            </div>
+            <div class="popup__right">
+                <a onclick="closePopup('RentMe')" href="javascript:void(0);" class="popup__close">&times;</a>
+
+                <h2 class="heading-secondary u-margin-top-large u-margin-bottom-small u-margin-0-auto">Rent Me</h2>
+                <div class="popup__card u-margin-top-small">
+                    <p class="paragraph"><a class="u-normalize-anchor-tag" href="macbuiltroofing.com">Rentme.com</a> is
+                        a web application for rental properties owners.
+                        It keeps track of whose renting an apartment, if their payment is due, and any vendors you have
+                        designated for that propety. Rent Me also allows users
+                        to login and pay their rent, and make servise request that update in real time, through visiting
+                        the website or texts.
+                    </p>
+                </div>
+
+                <h3 class="heading-tertiary u-margin-left-small u-margin-top-medium u-margin-bottom-small">Stack:</h3>
+                <div class="popup__card popup__card--flex-box">
+                    <i class="fab fa-react composition__react-logo text-logo"></i>
+                    <i class="fab fa-sass composition__sass-logo text-logo"></i>
+                    <i class="fab fa-java composition__java-logo text-logo"></i>
+                </div>
+
+                <div class="popup__quick-links">
+                    <div class="popup__quick-links--first-row">
+                        <a class="btn btn--site-link u-margin-right-medium">visit website</a>
+                        <a class="btn btn--site-link">view code</a>
+                    </div>
+                    <div class="popup__quick-links--second-row">
+                        <div class="popup__quick-links--second-row-right">
+                            <a class="btn btn--site-link u-margin-right-medium">Contact Me</a>
+                        </div>
+                        <div class="popup__quick-links--second-row-left">
+                            <a class="btn btn--logo-link" href="https://github.com/BrandonSaravia"><i
+                                    class="fab fa-github-square"></i></a>
+                            <a class="btn btn--logo-link"
+                                href="https://www.linkedin.com/in/brandon-saravia-24b59b182/"><i
+                                    class="fab fa-linkedin"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- About Section onmouseover skills highlighter -->
     <script>
@@ -350,7 +532,7 @@
         const aboutLink = document.getElementById("about-link");
         const projectsLink = document.getElementById("projects-link");
         const contactLink = document.getElementById("contact-link");
-        
+
 
         // get sections of html document
         const headerSection = document.querySelector(".header");
@@ -375,9 +557,9 @@
 
 
         // get sections disctance from top of web page
-        let aboutSectionLocation = getPageDistance( aboutSection );
-        let projectsSectionLocation = getPageDistance( projectsSection );
-        let contactSectionLocation = getPageDistance( contactSection );
+        let aboutSectionLocation = getPageDistance(aboutSection);
+        let projectsSectionLocation = getPageDistance(projectsSection);
+        let contactSectionLocation = getPageDistance(contactSection);
 
 
         // function to scroll to desired section of page
@@ -391,7 +573,7 @@
         function aboutAnimation() {
             if (runAnimation[0] === true) {
                 let opacity = document.getElementById("remove-about-section-opacity");
-            
+
                 opacity.classList.remove("u-opacity-0");
 
                 let leftContent = document.getElementById("left-content-animation");
@@ -436,12 +618,12 @@
             if (window.pageYOffset >= sticky) {
                 navbar.classList.add("sticky");
             }
-            if (window.pageYOffset < sticky){
+            if (window.pageYOffset < sticky) {
                 navbar.classList.remove("sticky");
             }
 
             // know section user is focused on
-            const scrolled = window.scrollY + 1/2 * window.innerHeight;
+            const scrolled = window.scrollY + 1 / 2 * window.innerHeight;
 
             if (scrolled > 0 && scrolled < aboutSectionLocation && currentLocation != "header") {
                 // emphisize header
@@ -496,11 +678,11 @@
                 contactAnimation();
 
                 currentLocation = "contact"
-            } 
+            }
 
 
             // reset animations
-            if (scrolled === 1/2 * window.innerHeight) {
+            if (scrolled === 1 / 2 * window.innerHeight) {
                 let runReset = false;
 
                 for (let i = 0; i < runAnimation.length; i++) {
@@ -519,7 +701,7 @@
 
                     let leftContent = document.getElementById("left-content-animation");
                     let rightTopContent = document.getElementById("right-top-content-animation");
-                    let rightBottomContent = document.getElementById("right-bottom-content-animation");                
+                    let rightBottomContent = document.getElementById("right-bottom-content-animation");
 
                     leftContent.classList.remove('u-move-in-left-animation');
                     rightTopContent.classList.remove('u-move-in-right-animation');
@@ -530,9 +712,51 @@
                     runAnimation = [true, true, true];
                 }
             }
-        });        
-        
+        });
+
     </script>
 
+    <!-- Popup Functionality -->
+    <script>
+
+        function checkClickLocation(popupName) {
+
+            document.addEventListener("click", checkClick(popupName));
+
+            document.removeEventListener("click", checkClick(popupName));
+
+        }
+
+
+        function checkClick(popupName) {
+            let popup = document.getElementById("popup" + popupName + "Container");
+
+            var isClickInside = popup.contains(event.target);
+
+            if (!isClickInside) {
+                closePopup(popupName);
+            }
+        }
+
+
+        function openPopup(popupName) {
+            let popup = document.getElementById("popup" + popupName);
+            let popupCard = document.getElementById("popup" + popupName + "Container");
+
+            popup.classList.remove("u-opacity-0");
+            popup.classList.remove("u-visibility-hidden");
+            popupCard.classList.add("u-scale-up-animation");
+        }
+
+        function closePopup(popupName) {
+            let popup = document.getElementById("popup" + popupName);
+            let popupCard = document.getElementById("popup" + popupName + "Container");
+
+            popup.classList.add("u-opacity-0");
+            popup.classList.add("u-visibility-hidden");
+            popupCard.classList.remove("u-scale-up-animation");
+        }
+    </script>
 </body>
+
 </html>

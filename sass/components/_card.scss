@@ -1,12 +1,11 @@
 .card {
     height: 52rem;
-    transition: all .3s ease;
+    transition: all .2s ease;
     width: 100%;
     backface-visibility: hidden;
     border-radius: 3px;
     overflow: hidden;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
-    // background-color: #fff;
     position: relative;
     cursor: pointer;
 
@@ -21,7 +20,7 @@
     }
     
     &__picture {
-        background-size: cover;
+        background-size: contain;
         height: 40rem;
         background-blend-mode: screen;
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
@@ -30,18 +29,15 @@
         border-top-right-radius: 3px;
 
         &--1 {
-            // background-image: url(../img/nat-5.jpg);
-            background-image: url("https://via.placeholder.com/200x200.jpg?text=MacBuilt");
+            background-image: url("../img/macbuilt.jpg");
         }
     
         &--2 {
-            // background-image: url(../img/nat-6.jpg);
-            background-image: url("https://via.placeholder.com/200x200.jpg?text=Spotify+Mock");
+            background-image: url("../img/macbuilt.jpg");
         }
 
         &--3 {
-            // background-image: url(../img/nat-7.jpg);
-            background-image: url("https://via.placeholder.com/200x200.jpg?text=Rent+Me");
+            background-image: url("../img/macbuilt.jpg");
         }
     }
 

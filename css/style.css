@@ -28,6 +28,14 @@
   100% {
     opacity: 1; } }
 
+@keyframes scaleUp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.75); }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); } }
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
     v2.0 | 20110126
     License: none (public domain)
@@ -149,6 +157,17 @@ canvas {
   .paragraph--white {
     color: white; }
 
+.text-logo {
+  background-color: #000;
+  color: #fff;
+  font-size: 6.2rem;
+  width: 10rem;
+  padding-top: 2rem;
+  text-align: center;
+  height: 10rem; }
+  .text-logo:not(:first-child) {
+    margin-left: 1rem; }
+
 .u-center-text {
   text-align: center !important; }
 
@@ -176,8 +195,20 @@ canvas {
 .u-margin-top-huge {
   margin-top: 10rem !important; }
 
+.u-margin-top-medium {
+  margin-top: 5rem !important; }
+
 .u-margin-top-small {
   margin-top: 2rem !important; }
+
+.u-margin-left-small {
+  margin-left: 5%; }
+
+.u-margin-right-small {
+  margin-right: 1rem; }
+
+.u-margin-right-medium {
+  margin-right: 2rem; }
 
 .u-move-in-left-animation {
   animation: moveInLeft 1s ease-out; }
@@ -191,8 +222,23 @@ canvas {
 .u-move-in-bottom-animation {
   animation: moveInBottom 1s ease-out; }
 
+.u-scale-up-animation {
+  animation: scaleUp 1s ease; }
+
 .u-opacity-0 {
   opacity: 0; }
+
+.u-margin-0-auto {
+  margin: 0 auto; }
+
+.u-normalize-anchor-tag {
+  text-decoration: none;
+  color: #000; }
+  .u-normalize-anchor-tag:hover {
+    color: #a67b7d; }
+
+.u-visibility-hidden {
+  visibility: hidden; }
 
 .bg-video {
   position: absolute;
@@ -279,9 +325,40 @@ canvas {
   transition: transform .4s ease;
   transform: rotate(90deg); }
 
+.btn--site-link, .btn--site-link:link, .btn--site-link:visited {
+  width: 20rem;
+  height: 6.25rem;
+  padding-top: 2rem;
+  font-size: 2rem;
+  text-align: center;
+  border-radius: 7px;
+  transition: all .2s ease;
+  color: #fff;
+  background-color: #000;
+  border: 1px solid #a67b7d; }
+
+.btn--site-link:hover {
+  color: #a67b7d;
+  background-color: #fff;
+  border: 1px solid #a67b7d;
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.btn--site-link:active, .btn--site-link:focus {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.btn--logo-link, .btn--logo-link:link, .btn--logo-link:visited {
+  font-size: 6.8rem;
+  color: #000;
+  transition: all .2s ease; }
+
+.btn--logo-link:hover {
+  color: #a67b7d; }
+
 .card {
   height: 52rem;
-  transition: all .3s ease;
+  transition: all .2s ease;
   width: 100%;
   backface-visibility: hidden;
   border-radius: 3px;
@@ -296,7 +373,7 @@ canvas {
     transform: translateY(-0.1rem) scale(1.09);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
   .card__picture {
-    background-size: cover;
+    background-size: contain;
     height: 40rem;
     background-blend-mode: screen;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
@@ -304,11 +381,11 @@ canvas {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px; }
     .card__picture--1 {
-      background-image: url("https://via.placeholder.com/200x200.jpg?text=MacBuilt"); }
+      background-image: url("../img/macbuilt.jpg"); }
     .card__picture--2 {
-      background-image: url("https://via.placeholder.com/200x200.jpg?text=Spotify+Mock"); }
+      background-image: url("../img/macbuilt.jpg"); }
     .card__picture--3 {
-      background-image: url("https://via.placeholder.com/200x200.jpg?text=Rent+Me"); }
+      background-image: url("../img/macbuilt.jpg"); }
   .card__heading {
     font-size: 2.4rem;
     font-weight: 300;
@@ -477,6 +554,72 @@ select:-webkit-autofill:focus {
   z-index: 1000000000; }
   .sticky + .section-about {
     padding-top: 14.2rem !important; }
+
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000000000000;
+  background-color: rgba(0, 0, 0, 0.8); }
+  .popup__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    background-color: #fff;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    transition: all .1s;
+    display: flex; }
+  .popup__left {
+    width: 55%; }
+    .popup__left-image {
+      padding: 1rem;
+      width: 100%; }
+  .popup__right {
+    display: flex;
+    flex-flow: column;
+    width: 45%; }
+  .popup__close:link, .popup__close:visited {
+    color: #777;
+    position: absolute;
+    top: 1rem;
+    right: 1.75rem;
+    font-size: 3rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: all .2s;
+    line-height: 1; }
+  .popup__close:hover {
+    color: #a67b7d; }
+  .popup__card {
+    width: 90%;
+    background-color: #c7c7c7;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    margin: 0 auto; }
+    .popup__card--flex-box {
+      display: flex; }
+  .popup__quick-links {
+    margin: 5rem 0;
+    display: flex;
+    flex-flow: wrap; }
+    .popup__quick-links--first-row {
+      width: 100%;
+      display: flex;
+      justify-content: center; }
+    .popup__quick-links--second-row {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem; }
+      .popup__quick-links--second-row-left {
+        width: 20rem;
+        display: flex;
+        justify-content: space-evenly; }
 
 .footer {
   background-color: #2b2b2b;
