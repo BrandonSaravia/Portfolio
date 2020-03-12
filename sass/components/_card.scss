@@ -13,11 +13,19 @@
     &:hover {
         transform: translateY(-1rem) scale(1.1);
         box-shadow: 0 1rem 2rem rgba($color-black,.2);
+
+        @include respond(tab-hor) {
+            transform: initial;
+        }
     }
 
     &:active {
         transform: translateY(-.1rem) scale(1.09);
         box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+
+        @include respond(tab-hor) {
+            transform: translateY(-.1rem) scale(.9);
+        }
     }
     
     &__picture {

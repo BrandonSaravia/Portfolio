@@ -335,7 +335,7 @@
 
 
 
-    <div class="popup u-opacity-0 u-visibility-hidden" id="popupMacBuilt" onclick="checkClickLocation('MacBuilt')">
+    <div class="popup u-opacity-0 u-visibility-hidden u-display-none" id="popupMacBuilt" onclick="checkClickLocation('MacBuilt')">
         <div class="popup__container" id="popupMacBuiltContainer">
             <div class="popup__left">
                 <img src="./img/macbuilt.jpg" alt="Macbuit Website" class="popup__left-image">
@@ -383,7 +383,7 @@
     </div>
 
 
-    <div class="popup u-opacity-0 u-visibility-hidden" id="popupSpotifyMock" onclick="checkClickLocation('SpotifyMock')">
+    <div class="popup u-opacity-0 u-visibility-hidden u-display-none" id="popupSpotifyMock" onclick="checkClickLocation('SpotifyMock')">
         <div class="popup__container" id="popupSpotifyMockContainer">
             <div class="popup__left">
                 <img src="./img/macbuilt.jpg" alt="Macbuit Website" class="popup__left-image">
@@ -428,7 +428,7 @@
     </div>
 
 
-    <div class="popup u-opacity-0 u-visibility-hidden" id="popupRentMe" onclick="checkClickLocation('RentMe')">
+    <div class="popup u-opacity-0 u-visibility-hidden u-display-none" id="popupRentMe" onclick="checkClickLocation('RentMe')">
         <div class="popup__container" id="popupRentMeContainer">
             <div class="popup__left">
                 <img src="./img/macbuilt.jpg" alt="Macbuit Website" class="popup__left-image">
@@ -810,6 +810,7 @@
 
             popup.classList.remove("u-opacity-0");
             popup.classList.remove("u-visibility-hidden");
+            popup.classList.remove("u-display-none");
             popupCard.classList.add("u-scale-up-animation");
         }
 
@@ -819,6 +820,7 @@
 
             popup.classList.add("u-opacity-0");
             popup.classList.add("u-visibility-hidden");
+            popup.classList.add("u-display-none");
             popupCard.classList.remove("u-scale-up-animation");
         }
     </script>
