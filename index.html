@@ -110,7 +110,7 @@
 
     </script>
 
-    <main class="main" id="about">
+    <main class="main">
 
         <div class="navbar" id="navbar">
             <ul class="navbar__container navbar__container--1">
@@ -130,8 +130,23 @@
             </ul>
         </div>
 
+        <div class="hamburger" id="hamburger">
+            <input type="checkbox" class="hamburger__checkbox" id="hamburger__toggle">
+            
+            <label for="hamburger__toggle" class="btn-hamburger">
+                <span class="btn-hamburger__icon">&nbsp;</span>
+            </label>
+            
+            <div class="hamburger__menu">
+                <div class="hamburger__menu--row-1">
+                    <a href="https://github.com/BrandonSaravia"><i class="fab fa-github-square hamburger__link"></i></a>
+                    <a href="https://www.linkedin.com/in/brandon-saravia-24b59b182/"><i class="fab fa-linkedin  hamburger__link"></i></a>
+                </div>
+                <a class="btn btn-contact-me" onclick="scrollToID('contact')">Contact Me</a>
+            </div>
+        </div>
 
-        <section class="section-about">
+        <section class="section-about" id="about">
             <div class="u-center-text u-margin-bottom-large">
                 <h2 class="heading-secondary u-margin-bottom-medium-small" id="header-animation">
                     About Me
@@ -188,9 +203,9 @@
                                 class="list__sqlite list__item">SQLite</span></li>
                     </ul>
                 </div>
-                <div class="col-1-of-2">
+                <div class="col-1-of-2 u-display-none-on-tab-hor">
                     <img src="https://via.placeholder.com/465x200.jpg?text=My+Photo+placehoalder"
-                        alt="photo of Brandon Saravia" class="section-about__my-photo" id="right-top-content-animation">
+                        alt="photo of Brandon Saravia" class="my-photo" id="right-top-content-animation">
                     <div class="composition" id="right-bottom-content-animation">
                         <i class="fab fa-js composition__javascript-logo"
                             onmouseover="highlight([['item', 'javascript', '#F0DB4F'], ['logo', 'javascript-logo', '#F0DB4F']])"
@@ -201,9 +216,7 @@
                         <i class="fab fa-css3-alt composition__css3-logo"
                             onmouseover="highlight([['item', 'css3', '#2965f1'], ['logo', 'css3-logo', '#2965f1']])"
                             onmouseout="removeHighlight([['item', 'css3'], ['logo', 'css3-logo']])"></i>
-                        <i class="fab fa-react composition__react-logo"
-                            onmouseover="highlight([['item', 'react', '#61dbfb'], ['item', 'react-redux', '#61dbfb'], ['item', 'react-hooks', '#61dbfb'], ['logo', 'react-logo', '#61dbfb']])"
-                            onmouseout="removeHighlight([['item', 'react'], ['item', 'react-redux'], ['item', 'react-hooks'], ['logo', 'react-logo']])"></i>></i>
+                        <i class="fab fa-react composition__react-logo" onmouseover="highlight([['item', 'react', '#61dbfb'], ['item', 'react-redux', '#61dbfb'], ['item', 'react-hooks', '#61dbfb'], ['logo', 'react-logo', '#61dbfb']])" onmouseout="removeHighlight([['item', 'react'], ['item', 'react-redux'], ['item', 'react-hooks'], ['logo', 'react-logo']])"></i></i>
                         <i class="fab fa-sass composition__sass-logo"
                             onmouseover="highlight([['item', 'sass', '#c69'], ['logo', 'sass-logo', '#c69']])"
                             onmouseout="removeHighlight([['item', 'sass'], ['logo', 'sass-logo']])"></i>
@@ -243,6 +256,7 @@
                             <div class="card__picture card__picture--1">
                                 &nbsp;
                             </div>
+                            
                             <h4 class="card__heading">
                                 <span class="card__heading-span">
                                     MacBuilt Roofing
@@ -329,7 +343,7 @@
             <div class="popup__right">
                 <a onclick="closePopup('MacBuilt')" href="javascript:void(0);" class="popup__close">&times;</a>
 
-                <h2 class="heading-secondary u-margin-top-large u-margin-bottom-small u-margin-0-auto">MacBuilt Roofing
+                <h2 class="heading-secondary u-margin-top-large u-margin-bottom-small u-margin-0-auto u-font-size-smaller">MacBuilt Roofing
                 </h2>
                 <div class="popup__card u-margin-top-small">
                     <p class="paragraph"><a class="u-normalize-anchor-tag"
@@ -377,7 +391,7 @@
             <div class="popup__right">
                 <a onclick="closePopup('SpotifyMock')" href="javascript:void(0);" class="popup__close">&times;</a>
 
-                <h2 class="heading-secondary u-margin-top-large u-margin-bottom-small u-margin-0-auto">Spotify Mock</h2>
+                <h2 class="heading-secondary u-margin-top-large u-margin-bottom-small u-margin-0-auto u-font-size-smaller">Spotify Mock</h2>
                 <div class="popup__card u-margin-top-small">
                     <p class="paragraph"><a class="u-normalize-anchor-tag" href="macbuiltroofing.com">Spotifymock.com</a> is a mock application of spotify built using
                         the spotify api. 
@@ -422,7 +436,7 @@
             <div class="popup__right">
                 <a onclick="closePopup('RentMe')" href="javascript:void(0);" class="popup__close">&times;</a>
 
-                <h2 class="heading-secondary u-margin-top-large u-margin-bottom-small u-margin-0-auto">Rent Me</h2>
+                <h2 class="heading-secondary u-margin-top-large u-margin-bottom-small u-margin-0-auto u-font-size-smaller">Rent Me</h2>
                 <div class="popup__card u-margin-top-small">
                     <p class="paragraph"><a class="u-normalize-anchor-tag" href="macbuiltroofing.com">Rentme.com</a> is
                         a web application for rental properties owners.
@@ -462,6 +476,44 @@
             </div>
         </div>
     </div>
+
+    <!-- turn navbar into hamburger -->
+    <script>
+        // get width of screen even as it resizes
+        let width = document.body.clientWidth;
+
+        // hide navbar and show hamburger nav if width is <= 800
+        const nav = document.getElementById("navbar");
+        const hamburger = document.getElementById("hamburger");
+
+        let onresize = function() {
+            width = document.body.clientWidth;
+
+            if (width <= 800) {
+                nav.classList.add("u-display-none");
+                hamburger.classList.remove("u-display-none")
+            }
+            
+            if (width > 800) {
+                nav.classList.remove("u-display-none");
+                hamburger.classList.add("u-display-none");
+            }
+        }
+
+
+        // set correct nav on load up
+        if (width <= 800) {
+            nav.classList.add("u-display-none");
+            hamburger.classList.remove("u-display-none")
+        }
+        
+        if (width > 800) {
+            nav.classList.remove("u-display-none");
+            hamburger.classList.add("u-display-none");
+        }
+
+        window.addEventListener("resize", onresize)
+    </script>
 
     <!-- About Section onmouseover skills highlighter -->
     <script>
@@ -542,8 +594,6 @@
 
 
         // function that gets element distance from top of web page
-        let position = window.pageYOffset;
-
         function getPageDistance(elem) {
             let location = 0;
             if (elem.offsetParent) {
@@ -556,16 +606,21 @@
         };
 
 
-        // get sections disctance from top of web page
-        let aboutSectionLocation = getPageDistance(aboutSection);
-        let projectsSectionLocation = getPageDistance(projectsSection);
-        let contactSectionLocation = getPageDistance(contactSection);
-
-
         // function to scroll to desired section of page
         function scrollToID(id) {
             let section = document.getElementById(id);
-            section.scrollIntoView(true);
+
+            if (!navbar.classList.contains("sticky")){
+
+                let location = getPageDistance(section);
+                location -= navbar.offsetHeight
+
+                window.scrollTo(0, location);
+
+            } else {
+
+                section.scrollIntoView(true);
+            }
         }
 
 
@@ -614,13 +669,23 @@
         // window scroll event
         window.addEventListener("scroll", () => {
 
+            // know top of page
+            const topscroll = Math.round(window.scrollY);
+
             // make navbar sticky
-            if (window.pageYOffset >= sticky) {
+            if (topscroll >= window.innerHeight) {
                 navbar.classList.add("sticky");
             }
-            if (window.pageYOffset < sticky) {
+            if (topscroll < window.innerHeight) {
                 navbar.classList.remove("sticky");
             }
+
+            // get sections disctance from top of web page
+            let aboutSectionLocation = getPageDistance(aboutSection);
+            let projectsSectionLocation = getPageDistance(projectsSection);
+            let contactSectionLocation = getPageDistance(contactSection);
+
+            let position = window.pageYOffset;
 
             // know section user is focused on
             const scrolled = window.scrollY + 1 / 2 * window.innerHeight;

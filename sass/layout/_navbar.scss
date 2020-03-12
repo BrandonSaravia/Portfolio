@@ -10,11 +10,11 @@
     &__container {
         display: flex;
 
-
         &--1 {
             & > * {
                 margin-left: 4.5rem;
             }
+            
         }
 
         &--2 {
@@ -24,6 +24,9 @@
 
             &:last-child {
                 margin-right: 4.5rem;
+            }
+            @include respond(phone) {
+                float: right;
             }
         }
     }
@@ -49,7 +52,7 @@
                 background-color: $color-white;
                 border: 1px solid #a67b7d;
             }
-        }
+        }        
 
         &--logo {
             color: white;

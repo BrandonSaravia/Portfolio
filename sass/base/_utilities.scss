@@ -25,6 +25,7 @@
 
 .u-opacity-0 { opacity: 0; }
 .u-margin-0-auto { margin: 0 auto; }
+.u-display-none { display: none !important; }
 
 .u-normalize-anchor-tag { 
     text-decoration: none; 
@@ -34,5 +35,12 @@
     }
 }
 
+.u-display-none-on-tab-hor {
+    @include respond(tab-hor) {
+        display: none;
+    }
+}
+
 .u-visibility-hidden { visibility: hidden; }
 
+.u-font-size-smaller { @include respond(tab-vert) { font-size: 2rem; } }
