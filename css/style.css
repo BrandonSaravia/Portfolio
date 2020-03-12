@@ -193,7 +193,7 @@ canvas {
   margin-bottom: 1.5rem !important; }
 
 .u-margin-top-x-large {
-  margin-top: 24rem !important; }
+  margin-top: 30rem !important; }
 
 .u-margin-top-large {
   margin-top: 8rem !important; }
@@ -255,7 +255,7 @@ canvas {
 
 @media only screen and (max-width: 50em) {
   .u-font-size-smaller {
-    font-size: 2rem; } }
+    font-size: 3.5rem; } }
 
 .bg-video {
   position: absolute;
@@ -424,9 +424,15 @@ canvas {
   .card:hover {
     transform: translateY(-1rem) scale(1.1);
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+    @media only screen and (max-width: 62.5em) {
+      .card:hover {
+        transform: initial; } }
   .card:active {
     transform: translateY(-0.1rem) scale(1.09);
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+    @media only screen and (max-width: 62.5em) {
+      .card:active {
+        transform: translateY(-0.1rem) scale(0.9); } }
   .card__picture {
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -624,13 +630,18 @@ select:-webkit-autofill:focus {
     @media only screen and (max-width: 75em) {
       .popup__container {
         max-width: 57.5rem;
+        width: 90%; } }
+    @media only screen and (max-width: 75em) {
+      .popup__container {
+        max-width: 57.5rem;
         background-image: linear-gradient(to right top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9)), url("../img/macbuilt.jpg");
         background-size: 100% 100%; } }
   .popup__left {
     width: 55%; }
     .popup__left-image {
       padding: 1rem;
-      width: 100%; }
+      width: 100%;
+      height: 100%; }
     @media only screen and (max-width: 75em) {
       .popup__left {
         display: none;
@@ -816,7 +827,6 @@ select:-webkit-autofill:focus {
   position: relative; }
 
 .section-contact {
-  height: 100vh;
   background-color: #333;
   clip-path: polygon(0 0, 50% 12.5%, 100% 0, 100% 100%, 0% 100%);
   margin-top: -10rem;
