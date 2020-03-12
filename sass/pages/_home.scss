@@ -1,19 +1,20 @@
 .section-about {
-    padding: 10rem 0 12rem 0;
-    // background-color: rgb(25, 25, 65);
-    &__my-photo {
+    padding: 10rem 1.5rem 12rem 1.5rem;
+    .my-photo {
         margin-left: 7%;
+        width: 86%;
     }
 }
 
 .section-projects {
-    padding: 10rem 0 25rem 0;
+    padding: 10rem 1.5rem 25rem 1.5rem;
     position: relative;
 }
 
 .section-contact {
+    height: 100vh;
     background-color: #333;
     clip-path: polygon(0 0, 50% 12.5%, 100% 0, 100% 100%, 0% 100%);
     margin-top: -10rem;
-    padding-bottom: 12rem;
+    padding: 0 1.5rem 12rem 1.5rem;
 }

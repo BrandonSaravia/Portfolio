@@ -4,6 +4,7 @@
   "description": "Brandon Saravia's portfolio",
   "main": "index.js",
   "scripts": {
+    "start" : "live-server --port=3333",
     "compile:sass": "node-sass sass/main.scss css/style.css -w",
     "compile:aos:sass": "node-sass css/sass/aos.scss css/style.css -w"
   },

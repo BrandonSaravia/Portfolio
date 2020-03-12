@@ -13,15 +13,34 @@
 
         &:not(:last-child) {
             margin-right: $gutter-horizontal;
+
+            @include respond(tab-hor) {
+                margin: 0 auto;
+                margin-bottom: 6rem;
+            }
+        }
+        @include respond(tab-hor) {
+            float: none;
         }
     }
 
+    
+
     .col-1-of-2 {
         width: calc((100% - #{$gutter-horizontal}) / 2);
+        @include respond(tab-hor) {
+            width: 45rem;
+            margin: 0 auto;
+        }
     }
 
     .col-1-of-3 {
         width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+
+        @include respond(tab-hor) {
+            width: 45rem;
+            margin: 0 auto;
+        }
     }
 
     .col-2-of-3 {

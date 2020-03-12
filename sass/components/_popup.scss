@@ -15,6 +15,12 @@
         border-radius: 3px;
         transition: all .1s;
         display: flex;
+
+        @include respond(small-desktop) {
+            max-width: 57.5rem;
+            background-image: linear-gradient(to right top, rgba($color-white, 0.8), rgba($color-white, 0.9)), url("../img/macbuilt.jpg");
+            background-size: 100% 100%;
+        }   
     }
 
     &__left {
@@ -24,12 +30,22 @@
             padding: 1rem;
             width: 100%;
         }
+
+        @include respond(small-desktop) {
+            display: none;
+            width: 0;
+        }
     }
 
     &__right {
         display: flex;
         flex-flow: column;
         width: 45%;
+
+        @include respond(small-desktop) {
+            width: inherit;
+            margin: 0 auto;
+        }
     }
 
     &__close {
