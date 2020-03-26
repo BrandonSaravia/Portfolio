@@ -91,8 +91,7 @@ table {
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%;
-  scroll-behavior: smooth; }
+  font-size: 62.5%; }
   @media only screen and (min-width: 123em) {
     html {
       font-size: 75%; } }
@@ -517,6 +516,9 @@ canvas {
     color: #fff;
     background-color: #a67b7d;
     border: none; }
+    @media only screen and (max-width: 34.375em) {
+      .form__input {
+        font-size: 2.7rem; } }
     .form__input::placeholder {
       color: rgba(255, 255, 255, 0.6); }
     .form__input:focus {
@@ -527,6 +529,9 @@ canvas {
       border-bottom: 3px solid red; }
     .form__input--message {
       font-size: 2rem; }
+      @media only screen and (max-width: 34.375em) {
+        .form__input--message {
+          font-size: 3.5rem; } }
   .form__label {
     font-size: 1.7rem;
     font-weight: 700;
@@ -536,6 +541,9 @@ canvas {
     color: #fff;
     display: block;
     transition: all .3s; }
+    @media only screen and (max-width: 34.375em) {
+      .form__label {
+        font-size: 3rem; } }
   .form__btn {
     width: 25%;
     align-self: flex-end;
@@ -829,5 +837,6 @@ select:-webkit-autofill:focus {
 .section-contact {
   background-color: #333;
   clip-path: polygon(0 0, 50% 12.5%, 100% 0, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0 0, 50% 12.5%, 100% 0, 100% 100%, 0% 100%);
   margin-top: -10rem;
   padding: 0 1.5rem 12rem 1.5rem; }
