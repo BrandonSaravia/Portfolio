@@ -298,10 +298,10 @@
             </div>
         </section>
 
-        <section class="section-contact">
+        <section class="section-contact" id="contact">
             <div class="u-center-text u-margin-bottom-medium-large">
                 <h2 class="heading-secondary heading-secondary--white u-margin-bottom-medium-small u-margin-top-x-large"
-                    id="contact">
+                    >
                     Contact Me
                 </h2>
             </div>
@@ -317,7 +317,7 @@
                     <label for="email" class="form__label">Message</label>
                     <textarea class="form__input form__input--message" name="message" placeholder="Message" rows="7"
                         required></textarea>
-                    <div class="form__recaptcha" data-netlify-recaptcha="true"></div>
+                    <div class="form__recaptcha" data-netlify-recaptcha="true" aria-required="true"></div>
                     <button class="btn form__btn" type="submit">Submit</button>
 
                 </div>
@@ -361,8 +361,8 @@
 
                 <div class="popup__quick-links">
                     <div class="popup__quick-links--first-row">
-                        <a class="btn btn--site-link u-margin-right-medium">visit website</a>
-                        <a class="btn btn--site-link">view code</a>
+                        <a href="https://www.macbuiltroofing.com" class="btn btn--site-link u-margin-right-medium">visit website</a>
+                        <a href="https://github.com/BrandonSaravia/MacBuilt-Roofing" class="btn btn--site-link">view code</a>
                     </div>
                     <div class="popup__quick-links--second-row">
                         <div class="popup__quick-links--second-row-right">
@@ -609,18 +609,45 @@
         // function to scroll to desired section of page
         function scrollToID(id) {
             let section = document.getElementById(id);
+            let length = 0;
 
             if (!navbar.classList.contains("sticky")){
 
-                let location = getPageDistance(section);
-                location -= navbar.offsetHeight
+                length = getPageDistance(section);
+                length -= navbar.offsetHeight
 
-                window.scrollTo(0, location);
+                if (id === "contact") {
+                    length += .22 * section.offsetHeight;
+                }
 
             } else {
 
-                section.scrollIntoView(true);
+                length = getPageDistance(section);
+
+                if (id === "contact") {
+                    length += .22 * section.offsetHeight;
+                }
             }
+            
+            window.scrollTo(0, length);
+
+            // let targetLocation = length;
+
+            // let startLocation = window.pageYOffset;
+
+            // let distance = targetLocation - startLocation;
+            // let duration = 1000;
+
+            // let start = null;
+            
+            // function step(timestamp){
+            //     if (!start) start = timestamp;
+            //     const progress = timestamp - start;
+            //     window.scrollTo(0, distance*(progress / duration) + startLocation);
+            //     if (progress < duration) window.requestAnimationFrame(step);
+            // }
+
+            // window.requestAnimationFrame(step);
         }
 
 
@@ -780,6 +807,7 @@
         });
 
     </script>
+
 
     <!-- Popup Functionality -->
     <script>
