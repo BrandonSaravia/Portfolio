@@ -628,6 +628,8 @@
                     length += .22 * section.offsetHeight;
                 }
             }
+            
+            window.scrollTo(0, length);
 
             // let targetLocation = length;
 
@@ -637,8 +639,7 @@
             // let duration = 1000;
 
             // let start = null;
-
-            window.scrollTo(0, length);
+            
             // function step(timestamp){
             //     if (!start) start = timestamp;
             //     const progress = timestamp - start;
