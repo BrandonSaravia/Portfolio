@@ -632,24 +632,65 @@
             window.scrollTo(0, length);
 
 
+            switch (id) {
 
-            // let targetLocation = length;
+                case "header":
+                    headLink.classList.add("link-activated");
 
-            // let startLocation = window.pageYOffset;
+                    if (aboutLink.classList.contains("link-activated")) {
+                        aboutLink.classList.remove("link-activated");
+                    }
+                    if (projectsLink.classList.contains("link-activated")) {
+                        projectsLink.classList.remove("link-activated");
+                    }
+                    if (contactLink.classList.contains("link-activated")) {
+                        contactLink.classList.remove("link-activated");
+                    }
+                    break;
 
-            // let distance = targetLocation - startLocation;
-            // let duration = 1000;
+                case "about":
+                    aboutLink.classList.add("link-activated");
 
-            // let start = null;
-            
-            // function step(timestamp){
-            //     if (!start) start = timestamp;
-            //     const progress = timestamp - start;
-            //     window.scrollTo(0, distance*(progress / duration) + startLocation);
-            //     if (progress < duration) window.requestAnimationFrame(step);
-            // }
+                    if (headLink.classList.contains("link-activated")) {
+                        headLink.classList.remove("link-activated");
+                    }
+                    if (projectsLink.classList.contains("link-activated")) {
+                        projectsLink.classList.remove("link-activated");
+                    }
+                    if (contactLink.classList.contains("link-activated")) {
+                        contactLink.classList.remove("link-activated");
+                    }
+                    break;
 
-            // window.requestAnimationFrame(step);
+                case "projects": 
+                    projectsLink.classList.add("link-activated");
+
+                    if (headLink.classList.contains("link-activated")) {
+                        headLink.classList.remove("link-activated");
+                    }
+                    if (aboutLink.classList.contains("link-activated")) {
+                        aboutLink.classList.remove("link-activated");
+                    }
+                    if (contactLink.classList.contains("link-activated")) {
+                        contactLink.classList.remove("link-activated");
+                    }
+                    break;
+
+                case "contact":
+                    contactLink.classList.add("link-activated");
+
+                    if (headLink.classList.contains("link-activated")) {
+                        headLink.classList.remove("link-activated");
+                    }
+                    if (aboutLink.classList.contains("link-activated")) {
+                        aboutLink.classList.remove("link-activated");
+                    }
+                    if (projectsLink.classList.contains("link-activated")) {
+                        projectsLink.classList.remove("link-activated");
+                    }
+                    break;
+            }
+
         }
 
 
