@@ -447,7 +447,7 @@ canvas {
     .card__picture--2 {
       background-image: url("../img/macbuilt.jpg"); }
     .card__picture--3 {
-      background-image: url("../img/macbuilt.jpg"); }
+      background-image: url("../img/rent-me.jpg"); }
   .card__heading {
     font-size: 2.4rem;
     font-weight: 300;
@@ -641,8 +641,18 @@ select:-webkit-autofill:focus {
         width: 90%; } }
     @media only screen and (max-width: 75em) {
       .popup__container {
-        max-width: 57.5rem;
+        max-width: 57.5rem; } }
+    @media only screen and (max-width: 75em) {
+      .popup__container--1 {
         background-image: linear-gradient(to right top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9)), url("../img/macbuilt.jpg");
+        background-size: 100% 100%; } }
+    @media only screen and (max-width: 75em) {
+      .popup__container--2 {
+        background-image: linear-gradient(to right top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9)), url("../img/macbuilt.jpg");
+        background-size: 100% 100%; } }
+    @media only screen and (max-width: 75em) {
+      .popup__container--3 {
+        background-image: linear-gradient(to right top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9)), url("../img/rent-me.jpg");
         background-size: 100% 100%; } }
   .popup__left {
     width: 55%; }
