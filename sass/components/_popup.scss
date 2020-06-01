@@ -24,9 +24,26 @@
 
         @include respond(small-desktop) {
             max-width: 57.5rem;
-            background-image: linear-gradient(to right top, rgba($color-white, 0.8), rgba($color-white, 0.9)), url("../img/macbuilt.jpg");
-            background-size: 100% 100%;
         }   
+
+        &--1 {
+            @include respond(small-desktop) {
+                background-image: linear-gradient(to right top, rgba($color-white, 0.8), rgba($color-white, 0.9)), url("../img/macbuilt.jpg");
+                background-size: 100% 100%;
+            }
+        }
+        &--2 {
+            @include respond(small-desktop) {
+                background-image: linear-gradient(to right top, rgba($color-white, 0.8), rgba($color-white, 0.9)), url("../img/macbuilt.jpg");
+                background-size: 100% 100%;
+            }
+        }
+        &--3 {
+            @include respond(small-desktop) {
+                background-image: linear-gradient(to right top, rgba($color-white, 0.8), rgba($color-white, 0.9)), url("../img/rent-me.jpg");
+                background-size: 100% 100%;
+            }
+        }
     }
 
     &__left {

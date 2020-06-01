@@ -2,7 +2,10 @@
     padding: 10rem 1.5rem 12rem 1.5rem;
     .my-photo {
         margin-left: 7%;
+        height: 205px;
+        object-fit: cover;
         width: 86%;
+        object-position: 0px -53px;
     }
 }
 
